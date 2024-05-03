@@ -7,6 +7,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link href="css/layui.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/main.css" />
 		<script src="js/layui.js"></script>
 		<style>
 			.innerpages {
@@ -20,6 +21,11 @@
 		<div class="layui-layout layui-layout-admin">
 			<div class="layui-header layui-bg-green">
 				<div class="layui-logo layui-hide-xs layui-bg-green">工具箱</div>
+				<ul class="layui-nav layui-layout-left">
+					<li class="layui-nav-item layui-hide-xs"><a href="javascript:;">nav 1</a></li>
+					<li class="layui-nav-item layui-hide-xs"><a href="javascript:;">nav 2</a></li>
+					<li class="layui-nav-item layui-hide-xs"><a href="javascript:;">nav 3</a></li>
+				</ul>
 				<ul class="layui-nav layui-layout-right">
 					<li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
 						<a href="javascript:;">
@@ -47,6 +53,15 @@
 						<li class="layui-nav-item">
 							<a lay-jump="item5">乐跑助手</a>
 						</li>
+						<li class="layui-nav-item">
+							<a lay-jump="item6">Clash</a>
+						</li>
+						<li class="layui-nav-item">
+							<a lay-jump="item7">各种工具</a>
+						</li>
+						<li class="layui-nav-item">
+							<a lay-jump="item8">干掉极域</a>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -58,7 +73,13 @@
 					</div>
 				</div>
 			</div>
-			<div class="layui-footer layui-bg-black"></div>
+			<div class="layui-footer flex jc-c layui-bg-black ai-c">
+				<a target="_blank" href="https://www.cloudflare-cn.com/" title="本站由科赋锐（北京）信息科技有限公司提供网站加速和DNS解析服务"
+					alt="免费云加速（FreeCDN），为您免费提供网站加速和网站防御（DDOS、CC攻击）"
+					style="color: #fff;margin-right: 20px;">本站由科赋锐（北京）信息科技有限公司提供网站加速和DNS解析服务</a>
+				<a target="_blank" href="https://www.cloudflare-cn.com/"><img src="static/cloudflare.ico"
+						alt="本站由科赋锐（北京）信息科技有限公司提供网站加速和DNS解析服务" style="height: 50px;"></a>
+			</div>
 		</div>
 
 		<script>
@@ -69,6 +90,15 @@
 				var util = layui.util;
 				var $ = layui.$;
 
+				let text = `<div style="padding: 15px;" class="flex fd-y jc-c ai-c">
+					<p class="font-supermax font-bold">Contact-us</p>
+					<p class="font-max mt2"><span>Email:</span>
+						<a href="mailto:xianyuhekouchou@gmail.com" target="_blank">xianyuhekouchou@gmail.com</a>
+					</p>
+					<a href="https://t.me/xianyuhekouchou" target="_blank"><img src="static/tg.png" alt="" class="mt3" /></a>
+					<p class="font-max mt3">需要学弟帮助可以发邮件</p>
+				</div>`
+
 				//头部事件
 				util.event("lay-header-event", {
 					menuRight: function() {
@@ -76,8 +106,8 @@
 						layer.open({
 							type: 1,
 							title: "更多",
-							content: '<div style="padding: 15px;">处理右侧面板的操作</div>',
-							area: ["260px", "100%"],
+							content: text,
+							area: ["350px", "100%"],
 							offset: "rt", // 右上角
 							anim: "slideLeft", // 从右侧抽屉滑出
 							shadeClose: true,
@@ -85,24 +115,33 @@
 						});
 					},
 				});
-				
+
 				//iframe改变
 				var iframe = document.getElementById('pagesdom')
-				util.on('lay-jump',{
-					item1:function(){
-						 iframe.setAttribute('src','pages/pages1.html')
+				util.on('lay-jump', {
+					item1: function() {
+						iframe.setAttribute('src', 'pages/pages1.html')
 					},
-					item2:function(){
-						 iframe.setAttribute('src','pages/pages2.html')
+					item2: function() {
+						iframe.setAttribute('src', 'pages/pages2.html')
 					},
-					item3:function(){
-						 iframe.setAttribute('src','pages/pages3.html')
+					item3: function() {
+						iframe.setAttribute('src', 'pages/pages3.html')
 					},
-					item4:function(){
-						 iframe.setAttribute('src','pages/pages4.html')
+					item4: function() {
+						iframe.setAttribute('src', 'pages/pages4.html')
 					},
-					item5:function(){
-						 iframe.setAttribute('src','pages/pages5.html')
+					item5: function() {
+						iframe.setAttribute('src', 'pages/pages5.html')
+					},
+					item6: function() {
+						iframe.setAttribute('src', 'pages/pages6.html')
+					},
+					item7: function() {
+						iframe.setAttribute('src', 'pages/pages7.html')
+					},
+					item8: function() {
+						iframe.setAttribute('src', 'pages/pages8.html')
 					}
 				})
 			});
