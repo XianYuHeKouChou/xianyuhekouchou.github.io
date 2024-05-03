@@ -16,18 +16,17 @@
 		<div class="w100 flex jc-c pt4">
 			<div class="flex fd-y w100">
 				<div class="jc-c ai-c flex fd-y">
-					<div class="o-h br-50" style="width: 150px;height: 150px;">
-						<img src="../static/lepao.jpg" alt="" / style="width: 100%;">
+					<div class="o-h br-50 flex jc-c ai-c" style="width: 150px;height: 150px;">
+						<img src="../static/lepao.jpg" style="width: 150px;height: 150px;">
 					</div>
 					<h1 class="mt1 c-w" style="font-size: 3rem;">乐跑助手</h1>
-					<div class="mt2">
+					<div class="mt2 flex ai-c">
 						<button type="button" class="layui-btn layui-btn-radius" lay-on="video">查看演示</button>
-						<button type="button" class="layui-btn layui-btn-radius" lay-on="page">获取乐跑助手</button>
+						<button type="button" class="layui-btn layui-btn-radius" lay-on="alert">获取乐跑助手</button>
+						<a href="https://gitee.com/itexp/gogogo" class="layui-btn layui-btn-radius"
+							target="_blank">项目仓库</a>
 					</div>
 					<p class="c-w font-supermax mt2">目前仅支持安卓手机！</p>
-<!-- 					<div class="mt3">
-						<video controls src="../static/test.mp4"></video>
-					</div> -->
 				</div>
 			</div>
 	</body>
@@ -44,18 +43,21 @@
 					// 页面层
 					layer.open({
 						type: 1,
-						title:'视频',
-						area: ['333px','780px'],
-						content: '<video controls src="https://cloud.06dn.com/api/v3/share/preview/aYqefL?path=null" style="height: 720px;"></video>'
+						title: '视频',
+						area: ['333px', '780px'],
+						content: '<video controls src="https://v.06dn.com/api/v3/slave/source/0/L3VwbG9hZHMvMTk3OTUvMjAyNDA1LzA0LzE5Nzk1X0hPakNMM3phX3Rlc3QubXA0/test.mp4?sign=TypzjDlJFdxGk1enERLUXTagb5IHV4vsyqSh9hYCGDA%3D%3A1714788659" style="height: 720px;"></video>'
 					});
 				},
-				page: function() {
-					// 页面层
-					layer.open({
-						type: 1,
-						title:'二维码',
-						area: 'auto', // 宽高
-						content: '<img src="../static/Qrcode.jpg" alt="" />'
+				alert: function() {
+					layer.alert('', {
+						title: '提示',
+						content: '点击确定打开云盘分享页面，提取码已经复制到剪切板，直接粘贴即可'
+					}, function(index) {
+						navigator.clipboard.writeText('ty7Y')
+						util.openWin({
+							url: 'https://caiyun.139.com/m/i?0D5CIsbt92Z6h'
+						});
+						layer.close(index);
 					});
 				}
 			})
