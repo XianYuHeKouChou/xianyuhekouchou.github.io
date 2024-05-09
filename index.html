@@ -22,9 +22,8 @@
 			<div class="layui-header layui-bg-green">
 				<div class="layui-logo layui-hide-xs layui-bg-green">工具箱</div>
 				<ul class="layui-nav layui-layout-left">
-					<li class="layui-nav-item layui-hide-xs"><a href="javascript:;">nav 1</a></li>
-					<li class="layui-nav-item layui-hide-xs"><a href="javascript:;">nav 2</a></li>
-					<li class="layui-nav-item layui-hide-xs"><a href="javascript:;">nav 3</a></li>
+					<li class="layui-nav-item layui-hide-xs" lay-on="iframe"><a href="javascript:;">需求墙</a></li>
+					<li class="layui-nav-item layui-hide-xs" lay-on="iframe1"><a href="javascript:;">反馈</a></li>
 				</ul>
 				<ul class="layui-nav layui-layout-right">
 					<li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
@@ -74,6 +73,8 @@
 				</div>
 			</div>
 			<div class="layui-footer flex jc-c layui-bg-black ai-c">
+				<a target="_blank" href="http://www.freecdn.pw/?zzwz" title="免费云加速（FreeCDN），为您免费提供网站加速和网站防御（DDOS、CC攻击）"
+					alt="免费云加速（FreeCDN），为您免费提供网站加速和网站防御（DDOS、CC攻击）">本站由免费云加速（FreeCDN）提供网站加速和攻击防御服务</a>
 			</div>
 		</div>
 
@@ -94,6 +95,14 @@
 					<p class="font-max mt3">需要学弟帮助可以发邮件</p>
 				</div>`
 
+				let iframe_page = `<iframe width="640px" height="480px" src="https://forms.office.com/r/rXKUgxyKwK?embed=true"
+					frameborder="0" marginwidth="0" marginheight="0"
+					style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen
+					mozallowfullscreen msallowfullscreen></iframe>`
+
+				let iframe_page1 =
+					`<iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=lcQ959jZuk6Zs0PuQy8hnh_VS-jiioJOmoVNSsyrp9pUNEIxNEZEQUdGWFNWSjQwMzZPVDhTT0FKWS4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>`
+
 				//头部事件
 				util.event("lay-header-event", {
 					menuRight: function() {
@@ -110,6 +119,27 @@
 						});
 					},
 				});
+
+				util.on('lay-on', {
+					iframe: function() {
+						// 页面层
+						layer.open({
+							type: 1,
+							title: '需求提交',
+							area: 'auto',
+							content: iframe_page
+						});
+					},
+					iframe1: function() {
+						// 页面层
+						layer.open({
+							type: 1,
+							title: '反馈',
+							area: 'auto',
+							content: iframe_page1
+						});
+					}
+				})
 
 				//iframe改变
 				var iframe = document.getElementById('pagesdom')
