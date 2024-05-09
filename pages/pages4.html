@@ -22,8 +22,9 @@
 					<h1 class="mt1 c-w" style="font-size: 3rem;">学习通签到助手</h1>
 					<div class="mt2">
 						<button type="button" class="layui-btn layui-btn-radius" lay-on="page">获取签到助手</button>
+						<button type="button" class="layui-btn layui-btn-radius" lay-on="page1">替代品</button>
 					</div>
-					<p class="c-w font-supermax mt2">一个微信小程序</p>
+					<p class="c-w font-supermax mt2">一个微信小程序，目前作者遇了点问题，目前只能使用替代品</p>
 				</div>
 			</div>
 	</body>
@@ -43,6 +44,15 @@
 						title:'二维码',
 						area: 'auto', // 宽高
 						content: '<img src="../static/Qrcode.jpg" alt="" />'
+					});
+				},
+				page1: function() {
+					// 页面层
+					layer.open({
+						type: 1,
+						title:'二维码',
+						area: 'auto', // 宽高
+						content: '<img src="../static/qiandao.jpg" alt="" />'
 					});
 				}
 			})
