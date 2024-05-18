@@ -73,103 +73,110 @@
 				</div>
 			</div>
 			<div class="layui-footer flex jc-c layui-bg-black ai-c">
-				<a target="_blank" href="http://www.freecdn.pw/?zzwz" title="免费云加速（FreeCDN），为您免费提供网站加速和网站防御（DDOS、CC攻击）"
-					alt="免费云加速（FreeCDN），为您免费提供网站加速和网站防御（DDOS、CC攻击）">本站由免费云加速（FreeCDN）提供网站加速和攻击防御服务</a>
+				<a target="_blank" href="https://www.cloudflare-cn.com"
+					title="就是那个校园网1.1.1.1重定向的Cloudflare,妈的什么地址不拦拦这个" class="c-w">主站由github托管，Cloudflare提供DNS解析服务，亚洲区域由微软亚太节点加速</a>
 			</div>
 		</div>
-
-		<script>
-			//JS
-			layui.use(["element", "layer", "util"], function() {
-				var element = layui.element;
-				var layer = layui.layer;
-				var util = layui.util;
-				var $ = layui.$;
-
-				let text = `<div style="padding: 15px;" class="flex fd-y jc-c ai-c">
-					<p class="font-supermax font-bold">Contact-us</p>
-					<p class="font-max mt2"><span>Email:</span>
-						<a href="mailto:xianyuhekouchou@gmail.com" target="_blank">xianyuhekouchou@gmail.com</a>
-					</p>
-					<a href="https://t.me/xianyuhekouchou" target="_blank"><img src="static/tg.png" alt="" class="mt3" /></a>
-					<p class="font-max mt3">需要学弟帮助可以发邮件</p>
-				</div>`
-
-				let iframe_page = `<iframe width="640px" height="480px" src="https://forms.office.com/r/rXKUgxyKwK?embed=true"
-					frameborder="0" marginwidth="0" marginheight="0"
-					style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen
-					mozallowfullscreen msallowfullscreen></iframe>`
-
-				let iframe_page1 =
-					`<iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=lcQ959jZuk6Zs0PuQy8hnh_VS-jiioJOmoVNSsyrp9pUNEIxNEZEQUdGWFNWSjQwMzZPVDhTT0FKWS4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>`
-
-				//头部事件
-				util.event("lay-header-event", {
-					menuRight: function() {
-						// 右侧菜单事件
-						layer.open({
-							type: 1,
-							title: "更多",
-							content: text,
-							area: ["350px", "100%"],
-							offset: "rt", // 右上角
-							anim: "slideLeft", // 从右侧抽屉滑出
-							shadeClose: true,
-							scrollbar: false,
-						});
-					},
-				});
-
-				util.on('lay-on', {
-					iframe: function() {
-						// 页面层
-						layer.open({
-							type: 1,
-							title: '需求提交',
-							area: 'auto',
-							content: iframe_page
-						});
-					},
-					iframe1: function() {
-						// 页面层
-						layer.open({
-							type: 1,
-							title: '反馈',
-							area: 'auto',
-							content: iframe_page1
-						});
-					}
-				})
-
-				//iframe改变
-				var iframe = document.getElementById('pagesdom')
-				util.on('lay-jump', {
-					item1: function() {
-						iframe.setAttribute('src', 'pages/pages1.html')
-					},
-					item2: function() {
-						iframe.setAttribute('src', 'pages/pages2.html')
-					},
-					item3: function() {
-						iframe.setAttribute('src', 'pages/pages3.html')
-					},
-					item4: function() {
-						iframe.setAttribute('src', 'pages/pages4.html')
-					},
-					item5: function() {
-						iframe.setAttribute('src', 'pages/pages5.html')
-					},
-					item6: function() {
-						iframe.setAttribute('src', 'pages/pages6.html')
-					},
-					item7: function() {
-						iframe.setAttribute('src', 'pages/pages7.html')
-					},
-					item8: function() {
-						iframe.setAttribute('src', 'pages/pages8.html')
-					}
-				})
-			});
-		</script>
 	</body>
+	<script>
+		//JS
+		layui.use(["element", "layer", "util"], function() {
+			var element = layui.element;
+			var layer = layui.layer;
+			var util = layui.util;
+			var $ = layui.$;
+
+			window.onload = function() {
+				if (window.location.href != "https://jolly-island-0150ee400.5.azurestaticapps.net") {
+					if (confirm("您需要更换较快的节点访问此页面吗？")) {
+						window.location.href = "https://jolly-island-0150ee400.5.azurestaticapps.net";
+					}
+				}
+			};
+
+			let text = `<div style="padding: 15px;" class="flex fd-y jc-c ai-c">
+				<p class="font-supermax font-bold">Contact-us</p>
+				<p class="font-max mt2"><span>Email:</span>
+					<a href="mailto:xianyuhekouchou@gmail.com" target="_blank">xianyuhekouchou@gmail.com</a>
+				</p>
+				<a href="https://t.me/xianyuhekouchou" target="_blank"><img src="static/tg.png" alt="" class="mt3" /></a>
+				<a href="https://qm.qq.com/q/XhJ9Scxeo2" target="_blank"><img src="static/QQ.jpg" alt="" class="mt3 w100" /></a>
+			</div>`
+
+			let iframe_page = `<iframe width="640px" height="480px" src="https://forms.office.com/r/rXKUgxyKwK?embed=true"
+				frameborder="0" marginwidth="0" marginheight="0"
+				style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen
+				mozallowfullscreen msallowfullscreen></iframe>`
+
+			let iframe_page1 =
+				`<iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=lcQ959jZuk6Zs0PuQy8hnh_VS-jiioJOmoVNSsyrp9pUNEIxNEZEQUdGWFNWSjQwMzZPVDhTT0FKWS4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>`
+
+			//头部事件
+			util.event("lay-header-event", {
+				menuRight: function() {
+					// 右侧菜单事件
+					layer.open({
+						type: 1,
+						title: "更多",
+						content: text,
+						area: ["350px", "100%"],
+						offset: "rt", // 右上角
+						anim: "slideLeft", // 从右侧抽屉滑出
+						shadeClose: true,
+						scrollbar: false,
+					});
+				},
+			});
+
+			util.on('lay-on', {
+				iframe: function() {
+					// 页面层
+					layer.open({
+						type: 1,
+						title: '需求提交',
+						area: 'auto',
+						content: iframe_page
+					});
+				},
+				iframe1: function() {
+					// 页面层
+					layer.open({
+						type: 1,
+						title: '反馈',
+						area: 'auto',
+						content: iframe_page1
+					});
+				}
+			})
+
+			//iframe改变
+			var iframe = document.getElementById('pagesdom')
+			util.on('lay-jump', {
+				item1: function() {
+					iframe.setAttribute('src', 'pages/pages1.html')
+				},
+				item2: function() {
+					iframe.setAttribute('src', 'pages/pages2.html')
+				},
+				item3: function() {
+					iframe.setAttribute('src', 'pages/pages3.html')
+				},
+				item4: function() {
+					iframe.setAttribute('src', 'pages/pages4.html')
+				},
+				item5: function() {
+					iframe.setAttribute('src', 'pages/pages5.html')
+				},
+				item6: function() {
+					iframe.setAttribute('src', 'pages/pages6.html')
+				},
+				item7: function() {
+					iframe.setAttribute('src', 'pages/pages7.html')
+				},
+				item8: function() {
+					iframe.setAttribute('src', 'pages/pages8.html')
+				}
+			})
+		});
+	</script>
 </html>
