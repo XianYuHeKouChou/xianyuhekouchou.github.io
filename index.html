@@ -6,6 +6,13 @@
 		<meta name="renderer" content="webkit" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script>
+			if (window.location.href != "https://www.xianyuhekouchou.me/") {
+				if (confirm("您需要更换较快的节点访问此页面吗？")) {
+					window.location.href = "https://www.xianyuhekouchou.me/";
+				}
+			}
+		</script>
 		<link href="css/layui.css" rel="stylesheet" />
 		<link rel="stylesheet" href="css/main.css" />
 		<script src="js/layui.js"></script>
@@ -73,8 +80,8 @@
 				</div>
 			</div>
 			<div class="layui-footer flex jc-c layui-bg-black ai-c">
-				<a target="_blank" href="https://www.cloudflare-cn.com"
-					title="就是那个校园网1.1.1.1重定向的Cloudflare,妈的什么地址不拦拦这个" class="c-w">主站由github托管，Cloudflare提供DNS解析服务，亚洲区域由微软亚太节点加速</a>
+				<a target="_blank" href="https://www.cloudflare-cn.com" title="就是那个校园网1.1.1.1重定向的Cloudflare,妈的什么地址不拦拦这个"
+					class="c-w">主站由Github托管，Cloudflare提供DNS解析服务，亚洲区域由微软亚太节点加速</a>
 			</div>
 		</div>
 	</body>
@@ -85,15 +92,6 @@
 			var layer = layui.layer;
 			var util = layui.util;
 			var $ = layui.$;
-
-			window.onload = function() {
-				console.log(window.location.href);
-				if (window.location.href != "https://jolly-island-0150ee400.5.azurestaticapps.net/") {
-					if (confirm("您需要更换较快的节点访问此页面吗？")) {
-						window.location.href = "https://jolly-island-0150ee400.5.azurestaticapps.net";
-					}
-				}
-			};
 
 			let text = `<div style="padding: 15px;" class="flex fd-y jc-c ai-c">
 				<p class="font-supermax font-bold">Contact-us</p>
