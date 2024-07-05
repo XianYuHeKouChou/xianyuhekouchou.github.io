@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>测试</title>
+		<title>NCVT小破站</title>
 		<meta name="renderer" content="webkit" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,79 +14,189 @@
 			}
 		</script>
 		<link href="css/layui.css" rel="stylesheet" />
-		<link rel="stylesheet" href="css/main.css" />
+		<link id="layui_theme_css" rel="stylesheet">
 		<script src="js/layui.js"></script>
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js"></script>
 		<style>
-			.innerpages {
+			/* 媒体查询：在小屏幕上进行布局调整 */
+			@media screen and (max-width: 768px) {
+				.layui-layout-admin .layui-side {
+					transform: translate3d(-220px, 0, 0);
+					-webkit-transform: translate3d(-220px, 0, 0);
+					width: 220px;
+				}
+
+				.layui-layout-admin .layui-logo {
+					transform: translate3d(-220px, 0, 0);
+					-webkit-transform: translate3d(-220px, 0, 0);
+				}
+
+				.layui-layout-left {
+					left: 0;
+				}
+
+				.layadmin-pagetabs,
+				.layui-layout-admin .layui-body,
+				.layui-layout-admin .layui-footer,
+				.layui-layout-admin .layui-layout-left {
+					left: 0;
+				}
+			}
+
+			.layadmin-pagetabs,
+			.layui-layout-admin .layui-body,
+			.layui-layout-admin .layui-footer,
+			.layui-layout-admin .layui-header .layui-layout-right,
+			.layui-layout-admin .layui-header .layui-nav .layui-nav-item,
+			.layui-layout-admin .layui-layout-left,
+			.layui-layout-admin .layui-logo,
+			.layui-layout-admin .layui-side {
+				transition: all 0.3s;
+				-webkit-transition: all 0.3s;
+			}
+
+			.layadmin-side-spread-sm .layui-side {
+				transform: translate3d(0, 0, 0);
+				-webkit-transform: translate3d(0, 0, 0);
+			}
+
+			.layadmin-side-spread-sm .layadmin-pagetabs,
+			.layadmin-side-spread-sm .layui-body,
+			.layadmin-side-spread-sm .layui-footer,
+			.layadmin-side-spread-sm .layui-layout-left {
+				left: 0 !important;
+				transform: translate3d(220px, 0, 0) !important;
+				-webkit-transform: translate3d(220px, 0, 0) !important;
+			}
+
+			.layadmin-side-spread-sm .layui-layout-right {
+				right: -220px !important;
+			}
+
+			.layui-nav {
+				padding: 0;
+			}
+
+			.inner_page {
 				border: none;
 				width: 100%;
 				height: 100%;
 			}
 		</style>
 	</head>
-	<body>
+	<body class="layui-layout-body">
 		<div class="layui-layout layui-layout-admin">
-			<div class="layui-header layui-bg-green">
-				<div class="layui-logo layui-hide-xs layui-bg-green">工具箱</div>
-				<ul class="layui-nav layui-layout-left">
-					<li class="layui-nav-item layui-hide-xs" lay-on="iframe"><a href="javascript:;">需求提交</a></li>
-					<li class="layui-nav-item layui-hide-xs" lay-on="iframe1"><a href="javascript:;">反馈</a></li>
-				</ul>
-				<ul class="layui-nav layui-layout-right">
-					<li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
-						<a href="javascript:;">
-							<i class="layui-icon layui-icon-more-vertical"></i>
-						</a>
-					</li>
-				</ul>
-			</div>
-			<div class="layui-side layui-bg-black">
-				<div class="layui-side-scroll">
-					<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-					<ul class="layui-nav layui-nav-tree layui-bg-black" lay-filter="test">
-						<li class="layui-nav-item">
-							<a lay-jump="item1">脚本猫</a>
+			<div id="LAY_app">
+				<div class="layui-header">
+					<div class="layui-logo" lay-href="home/console.html">
+						<span id="time-text">Hello</span>
+					</div>
+					<ul class="layui-nav layui-layout-left">
+						<li class="layui-nav-item layadmin-flexible layui-hide-sm" lay-on="sidemeun">
+							<a>
+								<i class="layui-icon layui-icon-spread-left"></i>
+							</a>
 						</li>
-						<li class="layui-nav-item">
-							<a lay-jump="item2">NCVT Beta</a>
-						</li>
-						<li class="layui-nav-item">
-							<a lay-jump="item3">网课助手</a>
-						</li>
-						<li class="layui-nav-item">
-							<a lay-jump="item4">签到助手</a>
-						</li>
-						<li class="layui-nav-item">
-							<a lay-jump="item5">乐跑助手</a>
-						</li>
-						<li class="layui-nav-item">
-							<a lay-jump="item6">Clash</a>
-						</li>
-						<li class="layui-nav-item">
-							<a lay-jump="item7">各种工具</a>
-						</li>
-						<li class="layui-nav-item">
-							<a lay-jump="item8">干掉极域</a>
+						<li class="layui-nav-item" lay-on="submitmax"><a>需求提交</a></li>
+						<li class="layui-nav-item" lay-on="feedback"><a>反馈</a></li>
+					</ul>
+					<ul class="layui-nav layui-layout-right">
+						<div class="layui-form ws-header-theme" lay-on="lightdark" style="display: inline-block;">
+							<input type="checkbox" lay-skin="switch">
+							<div class="layui-unselect layui-form-switch layui-form-onswitch">
+								<div>
+									<i class="layui-icon layui-icon-moon"></i>
+								</div>
+							</div>
+							<div lay-checkbox="">
+								<i class="layui-icon layui-icon-moon"></i> |
+								<i class="layui-icon layui-icon-light"></i>
+							</div>
+						</div>
+						<li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
+							<a>
+								<i class="layui-icon layui-icon-more-vertical"></i>
+							</a>
 						</li>
 					</ul>
 				</div>
-			</div>
-			<div class="layui-body layui-bg-black">
-				<!-- 内容主体区域 -->
-				<div style="height: 100%;">
-					<div class="" style="width: 100%;height: 100%;">
-						<iframe src="pages/pages2.html" class="innerpages" id="pagesdom"></iframe>
+				<div class="layui-side layui-side-menu layui-bg-black">
+					<div class="layui-side-scroll">
+						<div class="layui-logo layui-hide-xs layui-bg-black">NCVT小破站</div>
+						<ul class="layui-nav layui-nav-tree">
+							<li class="layui-nav-item">
+								<a lay-jump="item1">脚本猫</a>
+							</li>
+							<li class="layui-nav-item">
+								<a lay-jump="item2">NCVT Beta</a>
+							</li>
+							<li class="layui-nav-item">
+								<a lay-jump="item3">网课助手</a>
+							</li>
+							<li class="layui-nav-item">
+								<a lay-jump="item4">签到助手</a>
+							</li>
+							<li class="layui-nav-item">
+								<a lay-jump="item5">乐跑助手</a>
+							</li>
+							<li class="layui-nav-item">
+								<a lay-jump="item6">Clash</a>
+							</li>
+							<li class="layui-nav-item">
+								<a lay-jump="item7">各种工具</a>
+							</li>
+							<li class="layui-nav-item">
+								<a lay-jump="item8">干掉极域</a>
+							</li>
+						</ul>
 					</div>
 				</div>
-			</div>
-			<div class="layui-footer flex jc-c layui-bg-black ai-c">
-				<a target="_blank" href="https://www.cloudflare-cn.com" title="就是那个校园网1.1.1.1重定向的Cloudflare,妈的什么地址不拦拦这个"
-					class="c-w">主站由Github托管，Cloudflare提供DNS解析服务，亚洲区域由微软亚太节点加速</a>
+				<div class="layui-body" style="padding: 0;">
+					<!-- <iframe src="https://docs.scriptcat.org" class="inner_page"></iframe> -->
+				</div>
 			</div>
 		</div>
 	</body>
 	<script>
-		//JS
+		function fetchNetworkTime() {
+			$.ajax({
+				url: 'http://quan.suning.com/getSysTime.do',
+				type: 'get',
+				success: function(res) {
+					res = JSON.parse(res)
+					let time_obj = document.getElementById("time-text")
+					timestampStr = res.sysTime1
+					console.log(timestampStr);
+					let year = timestampStr.substring(0, 4);
+					let month = timestampStr.substring(4, 6);
+					let day = timestampStr.substring(6, 8);
+					let hour = timestampStr.substring(8, 10);
+					let min = timestampStr.substring(10, 12);
+					let second = timestampStr.substring(12, 14);
+					setInterval(() => {
+						if (second >= 60) {
+							min++
+							second = 0
+						}
+						if (min >= 60) {
+							hour++
+							min = 0
+						}
+						if (hour >= 24) {
+							day++
+							hour = 0
+						}
+						second++
+						let formattedDate = `${year}-${month}-${day} ${hour}:${min}:${second}`
+						time_obj.innerHTML = formattedDate
+					}, 1000)
+				}
+			});
+		}
+
+		// 获取时间后每秒更新一次
+		fetchNetworkTime()
+
 		layui.use(["element", "layer", "util"], function() {
 			var element = layui.element;
 			var layer = layui.layer;
@@ -94,21 +204,21 @@
 			var $ = layui.$;
 
 			let text = `<div style="padding: 15px;" class="flex fd-y jc-c ai-c">
-				<p class="font-supermax font-bold">Contact-us</p>
-				<p class="font-max mt2"><span>Email:</span>
-					<a href="mailto:xianyuhekouchou@gmail.com" target="_blank">xianyuhekouchou@gmail.com</a>
-				</p>
-				<a href="https://t.me/xianyuhekouchou" target="_blank"><img src="static/tg.png" alt="" class="mt3" /></a>
-				<a href="https://qm.qq.com/q/XhJ9Scxeo2" target="_blank"><img src="static/QQ.jpg" alt="" class="mt3 w100" /></a>
-			</div>`
+					<p class="font-supermax font-bold">Contact-us</p>
+					<p class="font-max mt2"><span>Email:</span>
+						<a href="mailto:xianyuhekouchou@gmail.com" target="_blank">xianyuhekouchou@gmail.com</a>
+					</p>
+					<a href="https://t.me/xianyuhekouchou" target="_blank"><img src="static/tg.png" alt="" class="mt3" /></a>
+					<a href="https://qm.qq.com/q/XhJ9Scxeo2" target="_blank"><img src="static/QQ.jpg" alt="" class="mt3 w100" /></a>
+				</div>`;
 
-			let iframe_page = `<iframe width="640px" height="480px" src="https://forms.office.com/r/rXKUgxyKwK?embed=true"
-				frameborder="0" marginwidth="0" marginheight="0"
-				style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen
-				mozallowfullscreen msallowfullscreen></iframe>`
+			let iframe_page = `<iframe width="100%" height="100%" src="https://forms.office.com/r/rXKUgxyKwK?embed=true"
+					frameborder="0" marginwidth="0" marginheight="0"
+					style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen
+					mozallowfullscreen msallowfullscreen></iframe>`;
 
 			let iframe_page1 =
-				`<iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=lcQ959jZuk6Zs0PuQy8hnh_VS-jiioJOmoVNSsyrp9pUNEIxNEZEQUdGWFNWSjQwMzZPVDhTT0FKWS4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>`
+				`<iframe width="100%" height="100%" src="https://forms.office.com/Pages/ResponsePage.aspx?id=lcQ959jZuk6Zs0PuQy8hnh_VS-jiioJOmoVNSsyrp9pUNEIxNEZEQUdGWFNWSjQwMzZPVDhTT0FKWS4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>`;
 
 			//头部事件
 			util.event("lay-header-event", {
@@ -127,55 +237,95 @@
 				},
 			});
 
-			util.on('lay-on', {
-				iframe: function() {
-					// 页面层
+			let sidemenuopen = 0
+			let mainapp = document.getElementById('LAY_app')
+			let dark_light = 0
+			util.on("lay-on", {
+				lightdark: function() {
+					if (dark_light == 0) {
+						document.getElementById('layui_theme_css').setAttribute('href',
+							'css/layui-theme-dark.css')
+						dark_light = 1
+					} else if (dark_light == 1) {
+						document.getElementById('layui_theme_css').removeAttribute('href')
+						dark_light = 0
+					}
+				},
+				sidemeun: function() {
+					if (sidemenuopen == 0) {
+						mainapp.classList.add('layadmin-side-spread-sm')
+						sidemenuopen = 1
+					} else {
+						mainapp.classList.remove('layadmin-side-spread-sm')
+						sidemenuopen = 0
+					}
+					console.log("5555");
+				},
+				submitmax: function() {
 					layer.open({
 						type: 1,
-						title: '需求提交',
-						area: 'auto',
-						content: iframe_page
+						content: iframe_page,
+						title: "需求提交",
+						area: ["100%", "100%"],
+						maxmin: true,
+						success: function(layero, index) {
+							layer.full(index); // 最大化
+						},
 					});
 				},
-				iframe1: function() {
-					// 页面层
+				feedback: function() {
 					layer.open({
 						type: 1,
-						title: '反馈',
-						area: 'auto',
-						content: iframe_page1
+						content: iframe_page1,
+						title: "问题反馈",
+						area: ["100%", "100%"],
+						maxmin: true,
+						success: function(layero, index) {
+							layer.full(index); // 最大化
+						},
 					});
-				}
-			})
+				},
+			});
 
-			//iframe改变
-			var iframe = document.getElementById('pagesdom')
-			util.on('lay-jump', {
+			//iframe页面改变
+			let pages_show = document.getElementsByClassName("inner_page")[0];
+			let pages_href = null
+			let tmp_pages_href = null
+			util.on("lay-jump", {
 				item1: function() {
-					iframe.setAttribute('src', 'pages/pages1.html')
+					pages_href = "https://docs.scriptcat.org"
+					if (pages_href == tmp_pages_href) return
+					tmp_pages_href = pages_href
+					pages_show.setAttribute("src", pages_href);
 				},
 				item2: function() {
-					iframe.setAttribute('src', 'pages/pages2.html')
+					pages_href = "pages/pages1.html"
+					if (pages_href == tmp_pages_href) return
+					tmp_pages_href = pages_href
+					pages_show.setAttribute("src", pages_href);
 				},
 				item3: function() {
-					iframe.setAttribute('src', 'pages/pages3.html')
+					pages_href = "https://docs.ocsjs.com"
+					if (pages_href == tmp_pages_href) return
+					tmp_pages_href = pages_href
+					pages_show.setAttribute("src", pages_href);
 				},
 				item4: function() {
-					iframe.setAttribute('src', 'pages/pages4.html')
+					pages_show.setAttribute("src", "pages/pages4.html");
 				},
 				item5: function() {
-					iframe.setAttribute('src', 'pages/pages5.html')
+					pages_show.setAttribute("src", "pages/pages5.html");
 				},
 				item6: function() {
-					iframe.setAttribute('src', 'pages/pages6.html')
+					pages_show.setAttribute("src", "pages/pages6.html");
 				},
 				item7: function() {
-					iframe.setAttribute('src', 'pages/pages7.html')
+					pages_show.setAttribute("src", "pages/pages7.html");
 				},
 				item8: function() {
-					iframe.setAttribute('src', 'pages/pages8.html')
-				}
-			})
+					pages_show.setAttribute("src", "pages/pages8.html");
+				},
+			});
 		});
 	</script>
 </html>
