@@ -1,214 +1,220 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<title>NCVT小破站</title>
-		<meta name="renderer" content="webkit" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<script>
-				if (window.location.href != "https://www.xianyuhekouchou.me/") {
-					if (confirm("您需要更换较快的节点访问此页面吗？")) {
-						window.location.href = "https://www.xianyuhekouchou.me/";
-					}
-				}
-		</script>
-		<link href="css/layui.css" rel="stylesheet" />
-		<link id="layui_theme_css" rel="stylesheet">
-		<script src="js/layui.js"></script>
-		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js"></script>
-		<style>
-			/* 媒体查询：在小屏幕上进行布局调整 */
-			@media screen and (max-width: 768px) {
-				.layui-layout-admin .layui-side {
-					transform: translate3d(-220px, 0, 0);
-					-webkit-transform: translate3d(-220px, 0, 0);
-					width: 220px;
-				}
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8"/>
+    <title>NVTU</title>
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!--		<script>-->
+    <!--			if (window.location.href !== "https://www.xianyuhekouchou.me/") {-->
+    <!--				if (confirm("您需要更换较快的节点访问此页面吗？")) {-->
+    <!--					window.location.href = "https://www.xianyuhekouchou.me/";-->
+    <!--				}-->
+    <!--			}-->
+    <!--		</script>-->
+    <link href="css/layui.css" rel="stylesheet"/>
+    <link id="layui_theme_css" rel="stylesheet" href="css/layui-theme-dark.css">
+    <script src="js/layui.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js"></script>
+    <style>
+        /* 媒体查询：在小屏幕上进行布局调整 */
+        @media screen and (max-width: 768px) {
+            .layui-layout-admin .layui-side {
+                transform: translate3d(-220px, 0, 0);
+                -webkit-transform: translate3d(-220px, 0, 0);
+                width: 220px;
+            }
 
-				.layui-layout-admin .layui-logo {
-					transform: translate3d(-220px, 0, 0);
-					-webkit-transform: translate3d(-220px, 0, 0);
-				}
+            .layui-layout-admin .layui-logo {
+                transform: translate3d(-220px, 0, 0);
+                -webkit-transform: translate3d(-220px, 0, 0);
+            }
 
-				.layui-layout-left {
-					left: 0;
-				}
+            .layui-layout-left {
+                left: 0;
+            }
 
-				.layadmin-pagetabs,
-				.layui-layout-admin .layui-body,
-				.layui-layout-admin .layui-footer,
-				.layui-layout-admin .layui-layout-left {
-					left: 0;
-				}
-			}
+            .layadmin-pagetabs,
+            .layui-layout-admin .layui-body,
+            .layui-layout-admin .layui-footer,
+            .layui-layout-admin .layui-layout-left {
+                left: 0;
+            }
+        }
 
-			.layadmin-pagetabs,
-			.layui-layout-admin .layui-body,
-			.layui-layout-admin .layui-footer,
-			.layui-layout-admin .layui-header .layui-layout-right,
-			.layui-layout-admin .layui-header .layui-nav .layui-nav-item,
-			.layui-layout-admin .layui-layout-left,
-			.layui-layout-admin .layui-logo,
-			.layui-layout-admin .layui-side {
-				transition: all 0.3s;
-				-webkit-transition: all 0.3s;
-			}
+        .layadmin-pagetabs,
+        .layui-layout-admin .layui-body,
+        .layui-layout-admin .layui-footer,
+        .layui-layout-admin .layui-header .layui-layout-right,
+        .layui-layout-admin .layui-header .layui-nav .layui-nav-item,
+        .layui-layout-admin .layui-layout-left,
+        .layui-layout-admin .layui-logo,
+        .layui-layout-admin .layui-side {
+            transition: all 0.3s;
+            -webkit-transition: all 0.3s;
+        }
 
-			.layadmin-side-spread-sm .layui-side {
-				transform: translate3d(0, 0, 0);
-				-webkit-transform: translate3d(0, 0, 0);
-			}
+        .layadmin-side-spread-sm .layui-side {
+            transform: translate3d(0, 0, 0);
+            -webkit-transform: translate3d(0, 0, 0);
+        }
 
-			.layadmin-side-spread-sm .layadmin-pagetabs,
-			.layadmin-side-spread-sm .layui-body,
-			.layadmin-side-spread-sm .layui-footer,
-			.layadmin-side-spread-sm .layui-layout-left {
-				left: 0 !important;
-				transform: translate3d(220px, 0, 0) !important;
-				-webkit-transform: translate3d(220px, 0, 0) !important;
-			}
+        .layadmin-side-spread-sm .layadmin-pagetabs,
+        .layadmin-side-spread-sm .layui-body,
+        .layadmin-side-spread-sm .layui-footer,
+        .layadmin-side-spread-sm .layui-layout-left {
+            left: 0 !important;
+            transform: translate3d(220px, 0, 0) !important;
+            -webkit-transform: translate3d(220px, 0, 0) !important;
+        }
 
-			.layadmin-side-spread-sm .layui-logo {
-				transform: translate3d(0px, 0, 0) !important;
-				-webkit-transform: translate3d(0px, 0, 0) !important;
-			}
+        .layadmin-side-spread-sm .layui-logo {
+            transform: translate3d(0px, 0, 0) !important;
+            -webkit-transform: translate3d(0px, 0, 0) !important;
+        }
 
-			.layadmin-side-spread-sm .layui-layout-right {
-				right: -220px !important;
-			}
+        .layadmin-side-spread-sm .layui-layout-right {
+            right: -220px !important;
+        }
 
-			.layui-nav {
-				padding: 0;
-			}
+        .layui-nav {
+            padding: 0;
+            background-color: var(--lay-color-bg-2);
+        }
 
-			.inner_page {
-				border: none;
-				width: 100%;
-				height: 100%;
-			}
-		</style>
-	</head>
-	<body class="layui-layout-body">
-		<div class="layui-layout layui-layout-admin">
-			<div id="LAY_app">
-				<div class="layui-header">
-					<div class="layui-logo">
-						<span id="time-text">Hello</span>
-					</div>
-					<ul class="layui-nav layui-layout-left">
-						<li class="layui-nav-item layadmin-flexible layui-hide-sm" lay-on="sidemeun">
-							<a>
-								<i class="layui-icon layui-icon-spread-left"></i>
-							</a>
-						</li>
-						<li class="layui-nav-item" lay-on="submitmax"><a>需求提交</a></li>
-						<li class="layui-nav-item" lay-on="feedback"><a>反馈</a></li>
-					</ul>
-					<ul class="layui-nav layui-layout-right">
-						<div class="layui-form ws-header-theme" lay-on="lightdark" style="display: inline-block;">
-							<input type="checkbox" lay-skin="switch">
-							<div class="layui-unselect layui-form-switch layui-form-onswitch">
-								<div>
-									<i class="layui-icon layui-icon-moon"></i>
-								</div>
-							</div>
-							<div lay-checkbox="">
-								<i class="layui-icon layui-icon-moon"></i> |
-								<i class="layui-icon layui-icon-light"></i>
-							</div>
-						</div>
-						<li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
-							<a>
-								<i class="layui-icon layui-icon-more-vertical"></i>
-							</a>
-						</li>
-					</ul>
-				</div>
-				<div class="layui-side layui-side-menu layui-bg-black">
-					<div class="layui-side-scroll">
-						<div class="layui-logo layui-hide-xs layui-bg-black">NCVT小破站</div>
-						<ul class="layui-nav layui-nav-tree">
-							<li class="layui-nav-item">
-								<a lay-jump="item1">脚本猫</a>
-							</li>
-							<li class="layui-nav-item">
-								<a lay-jump="item2">NCVT Beta</a>
-							</li>
-							<li class="layui-nav-item">
-								<a lay-jump="item3">网课助手</a>
-							</li>
-							<li class="layui-nav-item">
-								<a lay-jump="item4">签到助手</a>
-							</li>
-							<li class="layui-nav-item">
-								<a lay-jump="item5">乐跑助手</a>
-							</li>
-							<li class="layui-nav-item">
-								<a lay-jump="item6">Clash</a>
-							</li>
-							<li class="layui-nav-item">
-								<a lay-jump="item7">各种工具</a>
-							</li>
-							<li class="layui-nav-item">
-								<a lay-jump="item8">干掉极域</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="layui-body" style="padding: 0;">
-					<iframe src="pages/err.html" class="inner_page"></iframe>
-				</div>
-			</div>
-		</div>
-	</body>
-	<script>
-		function fetchNetworkTime() {
-			$.ajax({
-				url: 'https://quan.suning.com/getSysTime.do',
-				type: 'get',
-				success: function(res) {
-					res = JSON.parse(res)
-					let time_obj = document.getElementById("time-text")
-					timestampStr = res.sysTime1
-					console.log(timestampStr);
-					let year = timestampStr.substring(0, 4);
-					let month = timestampStr.substring(4, 6);
-					let day = timestampStr.substring(6, 8);
-					let hour = timestampStr.substring(8, 10);
-					let min = timestampStr.substring(10, 12);
-					let second = timestampStr.substring(12, 14);
-					setInterval(() => {
-						if (second >= 60) {
-							min++
-							second = 0
-						}
-						if (min >= 60) {
-							hour++
-							min = 0
-						}
-						if (hour >= 24) {
-							day++
-							hour = 0
-						}
-						second++
-						let formattedDate = `${year}-${month}-${day} ${hour}:${min}:${second}`
-						time_obj.innerHTML = formattedDate
-					}, 1000)
-				}
-			});
-		}
+        .inner_page {
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div id="LAY_app">
+        <div class="layui-header">
+            <div class="layui-logo">
+                <span id="time-text">NVTU</span>
+            </div>
+            <ul class="layui-nav layui-layout-left">
+                <li class="layui-nav-item layadmin-flexible layui-hide-sm" lay-on="sidemeun">
+                    <a>
+                        <i class="layui-icon layui-icon-spread-left"></i>
+                    </a>
+                </li>
+                <li class="layui-nav-item" lay-on="submitmax"><a>需求提交</a></li>
+                <li class="layui-nav-item" lay-on="feedback"><a>反馈</a></li>
+            </ul>
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect style="height: 60px">
+                    <iframe allowtransparency="true" width="180" height="36" style="bottom: 0; border: none;position: relative;top: 12px" class="layui-hide-xs"
+                            src="//tianqi.2345.com/plugin/widget/index.htm?s=3&z=3&t=0&v=0&d=1&bd=0&k=000000&f=0080ff&ltf=00ff00&htf=cc0000&q=1&e=1&a=1&c=59431&w=180&h=36&align=center"></iframe>
+                </li>
+                <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
+                    <a>
+                        <i class="layui-icon layui-icon-more-vertical"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="layui-side layui-side-menu" style="background-color: var(--lay-color-bg-2);">
+            <div class="layui-side-scroll">
+                <ul class="layui-nav layui-nav-tree">
+                    <li class="layui-nav-item">
+                        <a lay-jump="item1">脚本猫</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a lay-jump="item2">NCVT Beta</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a lay-jump="item3">网课助手</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a lay-jump="item4">签到助手</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a lay-jump="item5">乐跑助手</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a lay-jump="item6">Clash</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a lay-jump="item7">各种工具</a>
+                    </li>
+                </ul>
+                <iframe allowtransparency="true" width="220" height="36" style="bottom: 0; border: none;position: absolute" class="layui-hide-sm"
+                        src="//tianqi.2345.com/plugin/widget/index.htm?s=3&z=3&t=0&v=0&d=1&bd=0&k=000000&f=0080ff&ltf=00ff00&htf=cc0000&q=1&e=1&a=1&c=59431&w=180&h=36&align=center"></iframe>
+            </div>
+        </div>
+        <div class="layui-body" style="padding: 0;">
+            <iframe src="pages/pages1.html" class="inner_page"></iframe>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    function fetchNetworkTime() {
+        $.ajax({
+            url: 'https://quan.suning.com/getSysTime.do',
+            type: 'get',
+            success: function (res) {
+                res = JSON.parse(res)
+                let time_obj = document.getElementById("time-text")
+                let timestampStr = res.sysTime1
+                let year = timestampStr.substring(0, 4);
+                let month = timestampStr.substring(4, 6);
+                let day = timestampStr.substring(6, 8);
+                let hour = timestampStr.substring(8, 10);
+                let min = timestampStr.substring(10, 12);
+                let second = timestampStr.substring(12, 14);
+                setInterval(() => {
+                    second++
+                    if (second === 60) {
+                        min++
+                        second = 0
+                    }
+                    if (min === 60) {
+                        hour++
+                        min = 0
+                    }
+                    if (hour === 60) {
+                        day++
+                        hour = 0
+                    }
+                    let tsecond, tmin, thour = "00"
+                    if (second <= 9) {
+                        tsecond = `0${second}`
+                    } else {
+                        tsecond = second
+                    }
+                    if (min <= 9) {
+                        tmin = `0${Number(min)}`
+                    } else {
+                        tmin = min
+                    }
+                    if (hour <= 9) {
+                        thour = `0${Number(hour)}`
+                    } else {
+                        thour = hour
+                    }
+                    console.log(thour, tmin, tsecond)
+                    time_obj.innerHTML = `${year}-${month}-${day} ${thour}:${tmin}:${tsecond}`
+                }, 1000)
+            }
+        });
+    }
 
-		// 获取时间后每秒更新一次
-		fetchNetworkTime()
+    // 获取时间后每秒更新一次
+    fetchNetworkTime()
 
-		layui.use(["element", "layer", "util"], function() {
-			var element = layui.element;
-			var layer = layui.layer;
-			var util = layui.util;
-			var $ = layui.$;
+    layui.use(["element", "layer", "util"], function () {
+        var element = layui.element;
+        var layer = layui.layer;
+        var util = layui.util;
+        var $ = layui.$;
 
-			let text = `<div style="padding: 15px;" class="flex fd-y jc-c ai-c">
+        let text = `<div style="padding: 15px;" class="flex fd-y jc-c ai-c">
 					<p class="font-supermax font-bold">Contact-us</p>
 					<p class="font-max mt2"><span>Email:</span>
 						<a href="mailto:xianyuhekouchou@gmail.com" target="_blank">xianyuhekouchou@gmail.com</a>
@@ -217,119 +223,103 @@
 					<a href="https://qm.qq.com/q/XhJ9Scxeo2" target="_blank"><img src="static/QQ.jpg" alt="" class="mt3 w100" /></a>
 				</div>`;
 
-			let iframe_page = `<iframe width="100%" height="100%" src="https://forms.office.com/r/rXKUgxyKwK?embed=true"
-					frameborder="0" marginwidth="0" marginheight="0"
-					style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen
+        let iframe_page = `<iframe width="100%" height="100%" src="https://forms.office.com/r/rXKUgxyKwK?embed=true" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen
 					mozallowfullscreen msallowfullscreen></iframe>`;
 
-			let iframe_page1 =
-				`<iframe width="100%" height="100%" src="https://forms.office.com/Pages/ResponsePage.aspx?id=lcQ959jZuk6Zs0PuQy8hnh_VS-jiioJOmoVNSsyrp9pUNEIxNEZEQUdGWFNWSjQwMzZPVDhTT0FKWS4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>`;
+        let iframe_page1 =
+            `<iframe width="100%" height="100%" src="https://forms.office.com/Pages/ResponsePage.aspx?id=lcQ959jZuk6Zs0PuQy8hnh_VS-jiioJOmoVNSsyrp9pUNEIxNEZEQUdGWFNWSjQwMzZPVDhTT0FKWS4u&embed=true" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>`;
 
-			// 头部事件
-			util.event("lay-header-event", {
-				menuRight: function() {
-					// 右侧菜单事件
-					layer.open({
-						type: 1,
-						title: "更多",
-						content: text,
-						area: ["350px", "100%"],
-						offset: "rt", // 右上角
-						anim: "slideLeft", // 从右侧抽屉滑出
-						shadeClose: true,
-						scrollbar: false,
-					});
-				},
-			});
+        // 头部事件
+        util.event("lay-header-event", {
+            menuRight: function () {
+                // 右侧菜单事件
+                layer.open({
+                    type: 1,
+                    title: "更多",
+                    content: text,
+                    area: ["350px", "100%"],
+                    offset: "rt", // 右上角
+                    anim: "slideLeft", // 从右侧抽屉滑出
+                    shadeClose: true,
+                    scrollbar: false,
+                });
+            },
+        });
 
-			let sidemenuopen = 0
-			let mainapp = document.getElementById('LAY_app')
-			let dark_light = 0
-			util.on("lay-on", {
-				lightdark: function() {
-					if (dark_light == 0) {
-						document.getElementById('layui_theme_css').setAttribute('href',
-							'css/layui-theme-dark.css')
-						dark_light = 1
-					} else if (dark_light == 1) {
-						document.getElementById('layui_theme_css').removeAttribute('href')
-						dark_light = 0
-					}
-				},
-				sidemeun: function() {
-					if (sidemenuopen == 0) {
-						mainapp.classList.add('layadmin-side-spread-sm')
-						sidemenuopen = 1
-					} else {
-						mainapp.classList.remove('layadmin-side-spread-sm')
-						sidemenuopen = 0
-					}
-				},
-				submitmax: function() {
-					layer.open({
-						type: 1,
-						content: iframe_page,
-						title: "需求提交",
-						area: ["100%", "100%"],
-						maxmin: true,
-						success: function(layero, index) {
-							layer.full(index); // 最大化
-						},
-					});
-				},
-				feedback: function() {
-					layer.open({
-						type: 1,
-						content: iframe_page1,
-						title: "问题反馈",
-						area: ["100%", "100%"],
-						maxmin: true,
-						success: function(layero, index) {
-							layer.full(index); // 最大化
-						},
-					});
-				},
-			});
+        let sidemenuopen = 0
+        let mainapp = document.getElementById('LAY_app')
+        util.on("lay-on", {
+            sidemeun: function () {
+                if (sidemenuopen === 0) {
+                    mainapp.classList.add('layadmin-side-spread-sm')
+                    sidemenuopen = 1
+                } else {
+                    mainapp.classList.remove('layadmin-side-spread-sm')
+                    sidemenuopen = 0
+                }
+            },
+            submitmax: function () {
+                layer.open({
+                    type: 1,
+                    content: iframe_page,
+                    title: "需求提交",
+                    area: ["100%", "100%"],
+                    maxmin: true,
+                    success: function (layero, index) {
+                        layer.full(index); // 最大化
+                    },
+                });
+            },
+            feedback: function () {
+                layer.open({
+                    type: 1,
+                    content: iframe_page1,
+                    title: "问题反馈",
+                    area: ["100%", "100%"],
+                    maxmin: true,
+                    success: function (layero, index) {
+                        layer.full(index); // 最大化
+                    },
+                });
+            },
+        });
 
-			// iframe页面改变
-			// let pages_show = document.getElementsByClassName("inner_page")[0];
-			// let pages_href = null
-			// let tmp_pages_href = null
-			// util.on("lay-jump", {
-			// 	item1: function() {
-			// 		pages_href = "https://docs.scriptcat.org"
-			// 		if (pages_href == tmp_pages_href) return
-			// 		tmp_pages_href = pages_href
-			// 		pages_show.setAttribute("src", pages_href);
-			// 	},
-			// 	item2: function() {
-			// 		pages_href = "pages/pages1.html"
-			// 		if (pages_href == tmp_pages_href) return
-			// 		tmp_pages_href = pages_href
-			// 		pages_show.setAttribute("src", pages_href);
-			// 	},
-			// 	item3: function() {
-			// 		pages_href = "https://docs.ocsjs.com"
-			// 		if (pages_href == tmp_pages_href) return
-			// 		tmp_pages_href = pages_href
-			// 		pages_show.setAttribute("src", pages_href);
-			// 	},
-			// 	item4: function() {
-			// 		pages_show.setAttribute("src", "pages/pages4.html");
-			// 	},
-			// 	item5: function() {
-			// 		pages_show.setAttribute("src", "pages/pages5.html");
-			// 	},
-			// 	item6: function() {
-			// 		pages_show.setAttribute("src", "pages/pages6.html");
-			// 	},
-			// 	item7: function() {
-			// 		pages_show.setAttribute("src", "pages/pages7.html");
-			// 	},
-			// 	item8: function() {
-			// 		pages_show.setAttribute("src", "pages/pages8.html");
-			// 	},
-			// });
-		});
-	</script>
+        // iframe页面改变
+        let pages_show = document.getElementsByClassName("inner_page")[0];
+        let pages_href = null
+        let tmp_pages_href = null
+        util.on("lay-jump", {
+            item1: function () {
+                pages_href = "https://docs.scriptcat.org"
+                if (pages_href === tmp_pages_href) return
+                tmp_pages_href = pages_href
+                pages_show.setAttribute("src", pages_href);
+            },
+            item2: function () {
+                pages_href = "pages/pages1.html"
+                if (pages_href === tmp_pages_href) return
+                tmp_pages_href = pages_href
+                pages_show.setAttribute("src", pages_href);
+            },
+            item3: function () {
+                pages_href = "https://docs.ocsjs.com"
+                if (pages_href === tmp_pages_href) return
+                tmp_pages_href = pages_href
+                pages_show.setAttribute("src", pages_href);
+            },
+            item4: function () {
+                pages_show.setAttribute("src", "pages/pages2.html");
+            },
+            item5: function () {
+                pages_show.setAttribute("src", "pages/pages3.html");
+            },
+            item6: function () {
+                pages_show.setAttribute("src", "pages/pages4.html");
+            },
+            item7: function () {
+                pages_show.setAttribute("src", "pages/pages5.html");
+            }
+        });
+    });
+</script>
 </html>
