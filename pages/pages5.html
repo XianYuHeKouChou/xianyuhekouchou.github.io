@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/layui.css"/>
+    <link rel="stylesheet" href="../css/main.css"/>
+    <link rel="stylesheet" href="../css/layui-theme-dark.css">
+    <script src="../js/layui.js"></script>
+    <style>
+        .logo {
+            background-image: url(../static/yunpan.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+            width: 16vh;
+            height: 16vh;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<div class="w100 flex jc-c fd-y">
+    <!-- logo区域 -->
+    <div class="jc-c ai-c flex fd-y mt2">
+        <div class="logo"></div>
+        <h1 class="layui-font-gray layui-margin-3 layui-font-30">各类工具</h1>
+        <p class="c-w layui-font-22 layui-margin-3">包含无需付费的工具，需要付费的Hack版放在云盘了</p>
+        <p class="c-g84 layui-font-18 layui-margin-3">需要更多工具请使用反馈提交你的需求</p>
+        <p class="c-g84 layui-font-18 layui-margin-3">软件能使用正版就尽量使用正版</p>
+        <p class="c-g84 layui-font-18 layui-margin-3">
+            Jetbrains全家桶可以下载社区版，要使用专业版可以通过学信网进行学生认证</p>
+        <p class="c-g84 layui-font-18 layui-margin-3">Autodesk全家桶可以通过学信网进行学生认证</p>
+    </div>
+    <!-- logo区域 -->
+    <div class="w100 jc-c mt3">
+        <blockquote class="layui-elem-quote">
+            <div class="flex jc-sb ai-c">
+                <span>Office办公套件安装和激活</span>
+                <a href="https://otp.landian.vip/zh-cn/" target="_blank"
+                   class="layui-btn layui-btn-radius">打开Office Tool Plus官网</a>
+            </div>
+        </blockquote>
+        <blockquote class="layui-elem-quote">
+            <div class="flex jc-sb ai-c">
+                <span>为设计师打造的工具站（内含各类设计软件Hack及工具包）</span>
+                <a href="https://www.qijishow.com/" target="_blank"
+                   class="layui-btn layui-btn-radius">打开奇迹秀官网</a>
+            </div>
+        </blockquote>
+        <blockquote class="layui-elem-quote">
+            <div class="flex jc-sb ai-c">
+                <span>Windows各版本原版镜像包</span>
+                <a href="https://next.itellyou.cn/Original/Index" target="_blank"
+                   class="layui-btn layui-btn-radius">打开itellyou官网</a>
+            </div>
+        </blockquote>
+        <blockquote class="layui-elem-quote">
+            <div class="flex jc-sb ai-c">
+                <span>KMS/OEM智能激活工具</span>
+                <a href="../app/KMS.exe" target="_blank"
+                   class="layui-btn layui-btn-radius">下载HEU KMS Activator</a>
+            </div>
+        </blockquote>
+        <blockquote class="layui-elem-quote">
+            <div class="flex jc-sb ai-c">
+                <span>极域解除控制（在老师没有全屏显示前打开）</span>
+                <a href="../app/JiYuTrainer.exe" target="_blank"
+                   class="layui-btn layui-btn-radius">下载极域工具</a>
+            </div>
+        </blockquote>
+        <blockquote class="layui-elem-quote">
+            <div class="flex jc-sb ai-c">
+                <span>Adobe/AutoDesk全家桶（Hack）</span>
+                <button type="button" class="layui-btn layui-btn-radius"
+                        lay-jump="jump_page">获取云盘链接
+                </button>
+            </div>
+        </blockquote>
+        <blockquote class="layui-elem-quote">
+            <div class="flex jc-sb ai-c">
+                <span>VMware Workstation Pro（目前已免费开放给个人用户，但是想要下载比较麻烦）</span>
+                <button type="button" class="layui-btn layui-btn-radius"
+                        lay-jump="jump_page2">获取云盘链接
+                </button>
+            </div>
+        </blockquote>
+    </div>
+</div>
+</body>
+<script>
+    layui.use(function () {
+        var element = layui.element;
+        var layer = layui.layer;
+        var util = layui.util;
+        var $ = layui.$;
+        util.on('lay-jump', {
+            jump_page: function () {
+                layer.alert('', {
+                    title: '提示',
+                    content: '已经复制提取码到剪切板，直接粘贴即可'
+                }, function (index) {
+                    navigator.clipboard.writeText('R9ws')
+                    layer.close(index);
+                    util.openWin({
+                        url: 'https://caiyun.139.com/m/i?0D5CIsayseyhi',
+                    })
+                });
+            },
+            jump_page2: function () {
+                layer.alert('', {
+                    title: '提示',
+                    content: '已经复制提取码到剪切板，直接粘贴即可'
+                }, function (index) {
+                    navigator.clipboard.writeText('nSp2')
+                    layer.close(index);
+                    util.openWin({
+                        url: 'https://caiyun.139.com/m/i?0D5CIsb5uesiK',
+                    })
+                });
+            }
+        })
+    });
+</script>
+</html>

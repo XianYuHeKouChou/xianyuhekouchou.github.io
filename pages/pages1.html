@@ -1,60 +1,84 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-		<link rel="stylesheet" href="../css/layui.css" />
-		<link rel="stylesheet" href="../css/main.css" />
-		<script src="../js/layui.js"></script>
-		<style>
-			html {
-				background-color: #2b3137;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="w100 flex jc-c pt4">
-			<div class="flex fd-y w100">
-				<div class="jc-c ai-c flex fd-y">
-					<div class="o-h br-50 flex jc-c ai-c" style="width: 170px;height: 170px;">
-						<img src="../static/scriptcat.png" style="width: 150px;height: 150px;">
-					</div>
-					<h1 class="c-w mt1" style="font-size: 3rem;">Script <span style="color: #5ca1da;">Cat</span></h1>
-					<a href="https://docs.scriptcat.org/" class="layui-btn layui-btn-normal layui-btn-radius mt2" target="_blank">获取ScriptCat</a>
-					<p class="c-w font-supermax mt2">执行<span class="font-bold"
-							style="color: #5ca1da;">用户脚本</span>的浏览器扩展,激活浏览器的无限可能!</p>
-				</div>
-				<div class="flex ai-c mt3 p5" style="background-color: #4b5563;">
-					<div class="flex ai-c fd-y" style="flex: 3;">
-						<p class="c-w font-supermax font-bold">简单易用</p>
-						<p class="c-w font-max mt2">支持所有常见浏览器,安装方便快捷</p>
-					</div>
-					<div class="flex jc-sb" style="flex: 7;">
-						<span></span>
-						<img src="../static/borwsers.png" alt="" style="width: 60%;" />
-					</div>
-				</div>
-				<div class="flex ai-c p5">
-					<div class="flex jc-sb" style="flex: 6;">
-						<img src="../static/dark-ui.png" alt="" style="width: 60%;" />
-						<span></span>
-					</div>
-					<div class="flex ai-c fd-y" style="flex: 4;">
-						<p class="c-w font-supermax font-bold">精心设计</p>
-						<p class="c-w font-max mt2">采用了现代化的UI设计,让你的浏览器不再是那么单调,并且支持暗夜模式</p>
-					</div>
-				</div>
-				<div class="flex ai-c p5" style="background-color: #4b5563;">
-					<div class="flex ai-c fd-y" style="flex: 3;">
-						<p class="c-w font-supermax font-bold">由国人开发</p>
-						<p class="c-w font-max mt2">更适合国人体质的油猴</p>
-					</div>
-					<div class="flex jc-sb" style="flex: 7;">
-						<span></span>
-						<img src="../static/text.png" alt="" style="width: 60%;" />
-					</div>
-				</div>
-			</div>
-		</div>
-	</body>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/layui.css"/>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/layui-theme-dark.css">
+    <script src="../js/layui.js"></script>
+    <style>
+        .logo {
+            background-image: url(../static/ddd.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+            width: 16vh;
+            height: 16vh;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<div class="w100 flex jc-c fd-y">
+    <!-- logo区域 -->
+    <div class="jc-c ai-c flex fd-y mt2">
+        <div class="logo"></div>
+        <h1 class="layui-font-gray layui-margin-3 layui-font-30">NVTU <span class="layui-font-green">Beta</span></h1>
+        <div class="layui-row">
+            <div class="layui-col-xs6">
+					<button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="jump_page">
+                    获取NVTUBeta
+                </button>
+            </div>
+            <div class="layui-col-xs6">
+                <button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="show_gif">
+                    查看使用演示
+                </button>
+            </div>
+        </div>
+        <p class="c-w layui-font-22 layui-margin-3">完成二课内我学习的课程，补交二课总结，控制fif口语内口语分数</p>
+        <p class="c-g84 layui-font-18 layui-margin-3">（脚本未经过广泛测试，如遇到问题可以提交反馈）</p>
+    </div>
+    <!-- logo区域 -->
+</div>
+</body>
+<script>
+    layui.use(function () {
+        var element = layui.element;
+        var layer = layui.layer;
+        var util = layui.util;
+        var $ = layui.$;
+        util.on('lay-jump', {
+            jump_page: function () {
+                util.openWin({
+                    url: 'https://scriptcat.org/zh-CN/script-show-page/1790/'
+                })
+            },
+            show_gif: function () {
+                layer.photos({
+                    photos: {
+                        "title": "演示",
+                        "start": 0,
+                        "data": [{
+                            "alt": "入库演示",
+                            "pid": 2,
+                            "src": "../static/ruku.gif",
+                        }, {
+                            "alt": "学习演示",
+                            "pid": 2,
+                            "src": "../static/xuexi.gif",
+                        }, {
+                            "alt": "fif演示",
+                            "pid": 2,
+                            "src": "../static/fif.gif",
+                        }]
+                    },
+                    footer: true
+                });
+            }
+        })
+    });
+</script>
 </html>

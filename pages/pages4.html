@@ -1,63 +1,116 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-		<link rel="stylesheet" href="../css/layui.css" />
-		<link rel="stylesheet" href="../css/main.css" />
-		<script src="../js/layui.js"></script>
-		<style>
-			html {
-				background-color: #23292e;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="w100 flex jc-c pt4">
-			<div class="flex fd-y w100">
-				<div class="jc-c ai-c flex fd-y">
-					<div class="o-h br-50 flex jc-c ai-c" style="width: 150px;height: 150px;">
-						<img src="../static/qiandaologo.jpg" style="width: 150px;height: 150px;">
-					</div>
-					<h1 class="mt1 c-w" style="font-size: 3rem;">学习通签到助手</h1>
-					<div class="mt2">
-						<a href="https://api2.function.icu" target="_blank"><button type="button" class="layui-btn layui-btn-radius mr1">获取签到助手</button></a>
-						<a href="https://shoping.function.icu" target="_blank"><button type="button" class="layui-btn layui-btn-radius mr1">开通签到助手</button></a>
-						<button type="button" class="layui-btn layui-btn-radius" lay-on="page">审核使用</button>
-						<button type="button" class="layui-btn layui-btn-radius" lay-on="page1">替代品</button>
-					</div>
-					<p class="c-w font-supermax mt2">目前除二维码签到外其它无视，目前只有替代品可以使用微信小程序，本品需要购买后审核使用</p>
-				</div>
-			</div>
-	</body>
-	<script>
-		layui.use(["element", "layer", "util"], function() {
-			var element = layui.element;
-			var layer = layui.layer;
-			var util = layui.util;
-			var $ = layui.$;
-
-			//弹窗
-			util.on('lay-on', {
-				page: function() {
-					// 页面层
-					layer.open({
-						type: 1,
-						title:'二维码',
-						area: 'auto', // 宽高
-						content: '<img src="../static/Qrcode.jpg" alt="" />'
-					});
-				},
-				page1: function() {
-					// 页面层
-					layer.open({
-						type: 1,
-						title:'二维码',
-						area: 'auto', // 宽高
-						content: '<img src="../static/qiandao.jpg" alt="" />'
-					});
-				}
-			})
-		});
-	</script>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/layui.css"/>
+    <link rel="stylesheet" href="../css/main.css"/>
+    <link rel="stylesheet" href="../css/layui-theme-dark.css">
+    <script src="../js/layui.js"></script>
+    <style>
+        .logo {
+            background-image: url(../static/clashlogo.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+            width: 16vh;
+            height: 16vh;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<div class="w100 flex jc-c fd-y">
+    <!-- logo区域 -->
+    <div class="jc-c ai-c flex fd-y mt2">
+        <div class="logo"></div>
+        <h1 class="layui-font-gray layui-margin-3 layui-font-30">Clash Verge</h1>
+        <div class="layui-fluid">
+            <div class="layui-col-xs6">
+                <button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="download_app">
+                    获取Clash(本站)
+                </button>
+            </div>
+            <div class="layui-col-xs6">
+                <button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="jump_page">
+                    获取Clash(github)
+                </button>
+            </div>
+        </div>
+        <div class="layui-fluid">
+            <div class="layui-col-xs6">
+                <button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="get_url">
+                    获取临时订阅链接
+                </button>
+            </div>
+            <div class="layui-col-xs6">
+                <button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="get_pic">
+                    查看演示图片
+                </button>
+            </div>
+        </div>
+        <p class="c-w layui-font-22 layui-margin-3">需配合订阅（机场）节点科学上网</p>
+        <p class="c-g84 layui-font-18 layui-margin-3">目前仅支持安卓系统，iOS系统请使用 <a
+                href="https://apps.apple.com/tw/app/shadowrocket/id932747118" target="_blank">Shadowrocket</a></p>
+		<p class="c-g84 layui-font-18 layui-margin-3">下载时如遇文件下载不全请允许保留文件和允许弹出多窗口</p>
+    </div>
+    <!-- logo区域 -->
+</div>
+</body>
+<script>
+    layui.use(function () {
+        var element = layui.element;
+        var layer = layui.layer;
+        var util = layui.util;
+        var $ = layui.$;
+        util.on('lay-jump', {
+            download_app: function () {
+                let down_text = ["../app/clask.7z.001", "../app/clask.7z.002", "../app/clask.7z.003", "../app/clask.exe"]
+                let down_num = 0
+                let set_time = setInterval(() => {
+                    util.openWin({
+                        url: down_text[down_num]
+                    })
+                    if (down_num === 3) {
+                        clearInterval(set_time)
+                    }
+					down_num++
+                }, 1000)
+            },
+            jump_page: function () {
+                util.openWin({
+                    url: 'https://github.com/clash-verge-rev/clash-verge-rev/releases'
+                })
+            },
+            get_url: function () {
+                layer.alert('', {
+                    title: '提示',
+                    content: '已经复制到剪切板，直接粘贴即可'
+                }, function (index) {
+                    navigator.clipboard.writeText('https://dydz.csjc.win/api/v1/client/subscribe?token=f4336e19c305b2c48b615959b6b860bb')
+                    layer.close(index);
+                });
+            },
+            get_pic: function () {
+                layer.photos({
+                    photos: {
+                        "title": "演示",
+                        "start": 0,
+                        "data": [{
+                            "alt": "1",
+                            "pid": 2,
+                            "src": "../static/clash.png",
+                        }, {
+                            "alt": "1",
+                            "pid": 2,
+                            "src": "../static/clash1.png",
+                        }]
+                    },
+                    footer: true
+                });
+            }
+        })
+    });
+</script>
 </html>
