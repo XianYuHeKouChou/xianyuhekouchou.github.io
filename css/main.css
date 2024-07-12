@@ -1,425 +1,291 @@
-.bc-l {
-	background-color: #55aaff !important;
-}
-
-.bc-w {
-	background-color: #ffffff;
-}
-
-.bc-b {
-	background-color: #000000;
-}
-
-.bc-r {
-	background-color: #ff0000;
-}
-
-.bc-gree {
-	background-color: #00ff00;
-}
-
-.bc-g {
-	background-color: #cccccc !important;
-}
-
-.bc-wg {
-	background-color: #eeeeee;
-}
-
-.bc-g84 {
-	background-color: #999999;
-}
-
-.c-l {
-	color: #55aaff;
-}
-
-.c-w {
-	color: #ffffff;
-}
-
-.c-b {
-	color: #000000;
-}
-
-.c-r {
-	color: #ff0000;
-}
-
-.c-br {
-	color: #bd0000;
-}
-
-.c-gree {
-	color: #00ff00;
-}
-
-.c-g {
-	color: #cccccc;
-}
-
-.c-g84 {
-	color: #848484;
-}
-
-.font-supermax {
-	font-size: 20px;
-}
-
-.font-max {
-	font-size: 16px;
-}
-
-.font-center {
-	font-size: 14px;
-}
-
-.font-least {
-	font-size: 12px;
-}
-
-.font-bold {
-	font-weight: bolder;
-}
-
-.text1 {
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 1;
-	overflow: hidden;
-}
-
-.text2 {
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 2;
-	overflow: hidden;
-}
-
 .flex {
-	display: flex;
+    display: flex;
 }
 
 .jc-c {
-	justify-content: center;
+    justify-content: center;
 }
 
 .jc-sb {
-	justify-content: space-between;
+    justify-content: space-between;
 }
 
 .jc-sa {
-	justify-content: space-around;
+    justify-content: space-around;
 }
 
 .ai-c {
-	align-items: center;
+    align-items: center;
+}
+
+.fd-rx {
+    flex-direction: row-reverse;
 }
 
 .fd-y {
-	flex-direction: column;
+    flex-direction: column;
 }
 
 .flex-wrap {
-	flex-wrap: wrap;
-}
-
-.o-h {
-	overflow: hidden;
-}
-
-.d-ib {
-	display: inline-block;
-}
-
-.br-10 {
-	border-radius: 10px;
-}
-
-.br-20 {
-	border-radius: 20px;
-}
-
-.br-30 {
-	border-radius: 30px;
+    flex-wrap: wrap;
 }
 
 .w100 {
-	width: 100%;
+    width: 100%;
 }
 
 .h100 {
-	height: 100%;
+    height: 100%;
 }
 
 .p1 {
-	padding: 10px;
+    padding: 10px;
 }
 
 .p2 {
-	padding: 20px;
+    padding: 20px;
 }
 
 .p3 {
-	padding: 30px;
+    padding: 30px;
 }
 
 .p4 {
-	padding: 40px;
+    padding: 40px;
 }
 
 .p5 {
-	padding: 50px;
+    padding: 50px;
 }
 
 .pl1 {
-	padding-left: 10px;
+    padding-left: 10px;
 }
 
 .pl2 {
-	padding-left: 20px;
+    padding-left: 20px;
 }
 
 .pl3 {
-	padding-left: 30px;
+    padding-left: 30px;
 }
 
 .pl4 {
-	padding-left: 40px;
+    padding-left: 40px;
 }
 
 .pl5 {
-	padding-left: 50px;
+    padding-left: 50px;
 }
 
 .pt1 {
-	padding-top: 10px;
+    padding-top: 10px;
 }
 
 .pt2 {
-	padding-top: 20px;
+    padding-top: 20px;
 }
 
 .pt3 {
-	padding-top: 30px;
+    padding-top: 30px;
 }
 
 .pt4 {
-	padding-top: 40px;
+    padding-top: 40px;
 }
 
 .pt5 {
-	padding-top: 50px;
+    padding-top: 50px;
 }
 
 .pr1 {
-	padding-right: 10px;
+    padding-right: 10px;
 }
 
 .pr2 {
-	padding-right: 20px;
+    padding-right: 20px;
 }
 
 .pr3 {
-	padding-right: 30px;
+    padding-right: 30px;
 }
 
 .pr4 {
-	padding-right: 40px;
+    padding-right: 40px;
 }
 
 .pr5 {
-	padding-right: 50px;
+    padding-right: 50px;
 }
 
 .pb1 {
-	padding-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .pb2 {
-	padding-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 .pb3 {
-	padding-bottom: 30px;
+    padding-bottom: 30px;
 }
 
 .pb4 {
-	padding-bottom: 40px;
+    padding-bottom: 40px;
 }
 
 .pb5 {
-	padding-bottom: 50px;
+    padding-bottom: 50px;
 }
 
 .m1 {
-	margin: 10px;
+    margin: 10px;
 }
 
 .m2 {
-	margin: 20px;
+    margin: 20px;
 }
 
 .m3 {
-	margin: 30px;
+    margin: 30px;
 }
 
 .m4 {
-	margin: 40px;
+    margin: 40px;
 }
 
 .m5 {
-	margin: 50px;
+    margin: 50px;
 }
 
 .ml1 {
-	margin-left: 10px;
+    margin-left: 10px;
 }
 
 .ml2 {
-	margin-left: 20px;
+    margin-left: 20px;
 }
 
 .ml3 {
-	margin-left: 30px;
+    margin-left: 30px;
 }
 
 .ml4 {
-	margin-left: 40px;
+    margin-left: 40px;
 }
 
 .ml5 {
-	margin-left: 50px;
+    margin-left: 50px;
 }
 
 .mt1 {
-	margin-top: 10px;
+    margin-top: 10px;
 }
 
 .mt2 {
-	margin-top: 20px;
+    margin-top: 20px;
 }
 
 .mt3 {
-	margin-top: 30px;
+    margin-top: 30px;
 }
 
 .mt4 {
-	margin-top: 40px;
+    margin-top: 40px;
 }
 
 .mt5 {
-	margin-top: 50px;
+    margin-top: 50px;
 }
 
 .mr1 {
-	margin-right: 10px;
+    margin-right: 10px;
 }
 
 .mr2 {
-	margin-right: 20px;
+    margin-right: 20px;
 }
 
 .mr3 {
-	margin-right: 30px;
+    margin-right: 30px;
 }
 
 .mr4 {
-	margin-right: 40px;
+    margin-right: 40px;
 }
 
 .mr5 {
-	margin-right: 50px;
+    margin-right: 50px;
 }
 
 .mb1 {
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .mb2 {
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .mb3 {
-	margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 .mb4 {
-	margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .mb5 {
-	margin-bottom: 50px;
+    margin-bottom: 50px;
 }
 
-.posa {
-	position: absolute;
+.layui-fluid > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.posr {
-	position: relative;
+.start-bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9999;
+    -webkit-transition: all 1.5s;
+    -moz-transition: all 1.5s;
+    -ms-transition: all 1.5s;
+    -o-transition: all 1.5s;
+    transition: all 1.5s;
+    opacity: 1;
 }
 
-.posf {
-	position: fixed;
+.bgc {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
-.left0 {
-	left: 0;
+.bgc>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.top0 {
-	top: 0;
+#container {
+    position: absolute;
+    width: 100vw;
+    height: 40pt;
+    bottom: 20pt;
+    filter: url(#threshold) blur(0.6px)
 }
 
-.right0 {
-	right: 0;
-}
-
-.bottom0 {
-	bottom: 0;
-}
-
-.br-50 {
-	border-radius: 50%;
-}
-
-.brb-1 {
-	border-bottom: 1px;
-	border-bottom-color: #cccccc;
-	border-bottom-style: solid;
-}
-
-.brt-1 {
-	border-top: 1px;
-	border-top-color: #cccccc;
-	border-top-style: solid;
-	/* 	border-top-left-radius: 10px;
-	border-top-right-radius: 10px; */
-}
-
-.brr-1 {
-	border-right: 1px;
-	border-right-color: #cccccc;
-	border-right-style: solid;
-	/* 	border-top-left-radius: 10px;
-	border-top-right-radius: 10px; */
-}
-
-.mt05 {
-	margin-top: 5px;
-}
-
-.postop {
-	position: sticky;
-	top: 0;
-	z-index: 998;
-}
-
-.border0 {
-	border: none;
-}
-
-.disnon {
-	display: none;
+#text1,
+#text2 {
+    position: absolute;
+    width: 100%;
+    display: inline-block;
+    font-family: 'Raleway', sans-serif;
+    font-size: 40pt;
+    text-align: center;
+    user-select: none
 }
