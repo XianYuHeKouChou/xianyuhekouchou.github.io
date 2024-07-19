@@ -1,84 +1,106 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="../css/layui.css"/>
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/layui-theme-dark.css">
-    <script src="../js/layui.js"></script>
-    <style>
-        .logo {
-            background-image: url(../static/ddd.jpg);
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: contain;
-            width: 16vh;
-            height: 16vh;
-            overflow: hidden;
-            border-radius: 50%;
-        }
-    </style>
-</head>
-<body>
-<div class="w100 flex jc-c fd-y">
-    <!-- logo区域 -->
-    <div class="jc-c ai-c flex fd-y mt2">
-        <div class="logo"></div>
-        <h1 class="layui-font-gray layui-margin-3 layui-font-30">NVTU <span class="layui-font-green">Beta</span></h1>
-        <div class="layui-row">
-            <div class="layui-col-xs6">
-					<button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="jump_page">
-                    获取NVTUBeta
-                </button>
-            </div>
-            <div class="layui-col-xs6">
-                <button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="show_gif">
-                    查看使用演示
-                </button>
-            </div>
-        </div>
-        <p class="c-w layui-font-22 layui-margin-3">完成二课内我学习的课程，补交二课总结，控制fif口语内口语分数</p>
-        <p class="c-g84 layui-font-18 layui-margin-3">（脚本未经过广泛测试，如遇到问题可以提交反馈）</p>
-    </div>
-    <!-- logo区域 -->
-</div>
-</body>
-<script>
-    layui.use(function () {
-        var element = layui.element;
-        var layer = layui.layer;
-        var util = layui.util;
-        var $ = layui.$;
-        util.on('lay-jump', {
-            jump_page: function () {
-                util.openWin({
-                    url: 'https://scriptcat.org/zh-CN/script-show-page/1790/'
-                })
-            },
-            show_gif: function () {
-                layer.photos({
-                    photos: {
-                        "title": "演示",
-                        "start": 0,
-                        "data": [{
-                            "alt": "入库演示",
-                            "pid": 2,
-                            "src": "../static/ruku.gif",
-                        }, {
-                            "alt": "学习演示",
-                            "pid": 2,
-                            "src": "../static/xuexi.gif",
-                        }, {
-                            "alt": "fif演示",
-                            "pid": 2,
-                            "src": "../static/fif.gif",
-                        }]
-                    },
-                    footer: true
-                });
-            }
-        })
-    });
-</script>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/layui.css" />
+		<link rel="stylesheet" href="../css/main.css">
+		<link rel="stylesheet" href="../css/layui-theme-dark.css">
+		<script src="../js/layui.js"></script>
+		<style>
+			.logo {
+				background-image: url('../static/ddd.jpg');
+			}
+		</style>
+	</head>
+	<body>
+		<div class="w100 flex jc-c fd-y">
+			<!-- logo区域 -->
+			<div class="jc-c ai-c flex fd-y mt2">
+				<div class="logo"></div>
+				<h1 class="layui-font-gray layui-margin-3 layui-font-30">NVTU <span class="layui-font-green">Beta</span>
+				</h1>
+				<div class="layui-row layui-hide-xs">
+					<div class="layui-col-xs3">
+						<button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="jump_page">
+							获取NVTUBeta
+						</button>
+					</div>
+					<div class="layui-col-xs3">
+						<button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="jump_page2">
+							获取网课助手
+						</button>
+					</div>
+					<div class="layui-col-xs3">
+						<button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="show_video">
+							查看二课演示
+						</button>
+					</div>
+					<div class="layui-col-xs3">
+						<button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="show_video2">
+							查看fif演示
+						</button>
+					</div>
+				</div>
+				<div class="layui-row layui-hide-sm">
+					<div class="layui-col-xs6">
+						<button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="jump_page">
+							获取NVTUBeta
+						</button>
+					</div>
+					<div class="layui-col-xs6">
+						<button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="jump_page2">
+							获取网课助手
+						</button>
+					</div>
+				</div>
+				<div class="layui-row layui-hide-sm">
+					<div class="layui-col-xs6">
+						<button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="show_video">
+							查看二课演示
+						</button>
+					</div>
+					<div class="layui-col-xs6">
+						<button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="show_video2">
+							查看fif演示
+						</button>
+					</div>
+				</div>
+				<p class="c-w layui-font-22 layui-margin-3">完成二课内我学习的课程，补交二课总结，控制fif口语内口语分数</p>
+				<p class="c-g84 layui-font-18 layui-margin-3">请先安装脚本猫后再获取此脚本（网课助手获取方法同此脚本）</p>
+				<p class="c-g84 layui-font-18 layui-margin-3">（此脚本未经过广泛测试，如遇到问题可以提交反馈）</p>
+			</div>
+			<!-- logo区域 -->
+		</div>
+	</body>
+	<script>
+		layui.use(function() {
+			var element = layui.element;
+			var layer = layui.layer;
+			var util = layui.util;
+			var $ = layui.$;
+			util.on('lay-jump', {
+				jump_page: function() {
+					util.openWin({
+						url: 'https://scriptcat.org/zh-CN/script-show-page/1790/'
+					})
+				},
+				jump_page2: function() {
+					util.openWin({
+						url: 'https://scriptcat.org/zh-CN/script-show-page/367'
+					})
+				},
+				show_video: function() {
+					util.openWin({
+						url: '../static/videos.mp4'
+					})
+				},
+				show_video2: function() {
+					util.openWin({
+						url: '../static/videos1.mp4'
+					})
+				}
+			})
+		});
+	</script>
 </html>
