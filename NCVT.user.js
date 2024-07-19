@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         NCVT Beta
-// @version      0.1.0
-// @description  NCVT，官网：xianyuhekouchou.me
-// @author       NCVT
+// @name         NVTU Beta
+// @version      0.1.1
+// @description  NVTU，官网：xianyuhekouchou.me
+// @author       NVTU
 // @homepage   	 https://xianyuhekouchou.me/
 // @match        https://static.fifedu.com/*
 // @match        https://class.bigdata.ncvt.net/*
@@ -15,9 +15,7 @@ var fif_score = [];
 
 //NCVT请求主机
 var NcvtIP = "https://class.bigdata.ncvt.net/";
-//NCVT请求主机
 
-//请求方法
 //post请求
 function NCVTpost(url, data, succ) {
 	$.ajax({
@@ -36,6 +34,7 @@ function NCVTpost(url, data, succ) {
 		},
 	});
 }
+
 //get请求
 function NCVTget(url, data, succ) {
 	$.ajax({
@@ -52,7 +51,6 @@ function NCVTget(url, data, succ) {
 		},
 	});
 }
-//请求方法
 
 
 // fif口语功能实现区
@@ -128,8 +126,6 @@ function fifedu() {
 var allVideos_p = 1;
 var allVideos_maxID = null;
 var allVideos = [];
-//变量定义
-
 //获取所有未入库课程
 function getallVideos() {
 	NCVTpost('Student/Course/getCoursesCanApply.html', {
@@ -164,27 +160,23 @@ function getallVideos() {
 
 //变量定义
 var allVideos_num = 0;
-//变量定义
-
 //入库课程
 function checkVideos() {
 	allVideos.map((item) => {
 		NCVTpost("Student/Course/courseRegister.html", {
-				courseID: item.courseID,
-			},
-			(res) => {
-				if (res == "1") {
-					allVideos_num++;
-				}
-				if (allVideos_num === allVideos.length) {
-					mui.alert('入库完成，稍后将为您刷新页面', '提示', '确定', function(e) {
-						if (e.index === 0) {
-							location.reload();
-						}
-					}, 'div')
-				}
+			courseID: item.courseID,
+		}, (res) => {
+			if (res == "1") {
+				allVideos_num++;
 			}
-		);
+			if (allVideos_num === allVideos.length) {
+				mui.alert('入库完成，稍后将为您刷新页面', '提示', '确定', function(e) {
+					if (e.index === 0) {
+						location.reload();
+					}
+				}, 'div')
+			}
+		});
 	});
 }
 
@@ -205,8 +197,7 @@ function getallxxzVideos() {
 	}, (succ) => {
 		let tmp = JSON.parse(succ)
 		if (allxxzVideos_p === 1 && tmp[1].length === 0) {
-			mui.alert('您没有学习中的课程了', '提示', '确定', function(e) {}, 'div')
-			return
+			return mui.alert('您没有学习中的课程了', '提示', '确定', function(e) {}, 'div')
 		}
 		if (tmp[1].length === 0) {
 			mui.confirm(`获取完成，共${allxxzVideos.length}个课程，要开始学习吗？因脚本与页面共存，所以请勿对面进行刷新和回退等操作`, '提示', ['取消', '确认'],
@@ -214,8 +205,7 @@ function getallxxzVideos() {
 					if (e.index === 1) {
 						start_allxxzVideos()
 					}
-				},
-				'div')
+				}, 'div')
 			return
 		}
 		allxxzVideos_maxID = tmp[0]
@@ -249,7 +239,6 @@ function start_allxxzVideos() {
 			}
 		})
 	})
-
 }
 
 //dom重新渲染
@@ -278,8 +267,7 @@ function xxzvideos_settime() {
 	xxzvideos_time = setInterval(() => {
 		allxxzVideos.map((item, index) => {
 			if (mui(`#remainder_${item.courseID}`)[0].innerHTML == '0') {
-				stop_oncexxzVideos(index)
-				return null
+				return stop_oncexxzVideos(index)
 			}
 			let tmp = mui(`#remainder_${item.courseID}`)[0].innerHTML
 			mui(`#remainder_${item.courseID}`)[0].innerHTML = tmp - 1
@@ -318,14 +306,12 @@ function stop_oncexxzVideos(index) {
 		mui.toast(`${allxxzVideos[index].courseName} 学习完成`)
 		allxxzVideos.splice(index, 1)
 	})
-
 }
 
 //变量定义
 var allwpjVideos_p = 1
 var allwpjVideos_maxID = null
 var allwpjVideos = []
-//变量定义
 
 //获取未评价评价
 function get_allwpjvideos() {
@@ -335,8 +321,7 @@ function get_allwpjvideos() {
 	}, (succ) => {
 		let tmp = JSON.parse(succ)
 		if (tmp[1].length === 0 && allwpjVideos_p === 1) {
-			mui.alert('您没有未评价的课程了', '提示', '确定', function(e) {}, 'div')
-			return
+			return mui.alert('您没有未评价的课程了', '提示', '确定', function(e) {}, 'div')
 		}
 		if (tmp[1].length === 0) {
 			mui.confirm(`获取完成，共${allwpjVideos.length}个课程，要开始评价吗？`, '提示', ['取消', '确认'], function(e) {
@@ -373,6 +358,34 @@ function finish_allwpjVideos() {
 				return
 			}
 		})
+	})
+}
+
+//总结提交函数
+function submit_apply_func() {
+	let button_box = mui('.mui-content-padded')[1]
+	button_box.innerHTML =
+		`
+	<div id="submit_apply_box" style="display: flex;width: 100%;justify-content: space-between;align-items: center;">
+		<button type="button" class="mui-btn mui-btn-primary" id="submit_apply1">重新提交总结</button>
+		<button type="button" class="mui-btn mui-btn-primary" id="submit_apply2">查看已报名人员</button>
+	</div>
+	`
+	mui("#submit_apply_box").on('tap', '.mui-btn-primary', function() {
+		//获取id
+		let id = this.getAttribute("id");
+		// 获取当前页面的URL对象
+		const url = new URL(window.location.href);
+		// 使用URLSearchParams获取参数值  
+		const paramValue = url.searchParams.get('activityID');
+		if (id === "submit_apply1") {
+			window.open(
+				`https://class.bigdata.ncvt.net/Student/My/myActivitySummary.html?activityID=${paramValue}&retUrl=JTJGU3R1ZGVudCUyRk15JTJGaW5kZXguaHRtbA==`,
+				"NVTU");
+		} else if (id === "submit_apply2") {
+			window.open(`https://class.bigdata.ncvt.net/Student/My/activityQuery.html?activityID=${paramValue}`,
+				"NVTU");
+		}
 	})
 }
 
@@ -471,6 +484,12 @@ if (window.location.host == "class.bigdata.ncvt.net") {
 		Ncvt_getallvideo_start();
 	} else if (window.location.href == "https://class.bigdata.ncvt.net/Student/My/myCourse.html") {
 		Ncvt_getxxzvideo_start()
+	}
+	const submit_URL = window.location.href;
+	const targetPath = "https://class.bigdata.ncvt.net/Student/Activity/apply.html";
+	const currentPath = submit_URL.split('?')[0];
+	if (currentPath === targetPath) {
+		submit_apply_func()
 	}
 } else if (window.location.host == "static.fifedu.com") {
 	fiftool_start();
