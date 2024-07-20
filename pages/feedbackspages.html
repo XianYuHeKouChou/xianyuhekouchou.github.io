@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/layui.css" />
+		<link rel="stylesheet" href="../css/main.css">
+		<link rel="stylesheet" href="../css/layui-theme-dark.css">
+		<script src="../js/layui.js"></script>
+	</head>
+	<body>
+		<table class="layui-hide" id="ID-table-demo-page"></table>
+	</body>
+	<script>
+		layui.use('table', function() {
+			var table = layui.table;
+
+			// 创建渲染实例
+			table.render({
+				elem: '#ID-table-demo-page',
+				url: '../js/feedbacks.json', // 此处为静态模拟数据，实际使用时需换成真实接口
+				page: { // 支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+					layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'], //自定义分页布局
+					groups: 1, //只显示 1 个连续页码
+					first: false, //不显示首页
+					last: false //不显示尾页
+				},
+				pagebar: '#ID-table-demo-page-pagebar', // 分页栏模板
+				cols: [
+					[{
+							field: 'id',
+							width: 80,
+							title: 'ID',
+							sort: true
+						},
+						{
+							field: 'name',
+							width: 120,
+							title: '反馈人名称'
+						},
+						{
+							field: 'start-time',
+							width: 160,
+							title: '开始时间',
+							sort: true
+						},
+						{
+							field: 'end-time',
+							width: 160,
+							title: '结束时间',
+							sort: true
+						},
+						{
+							field: 'main',
+							title: '反馈内容',
+							minWidth: 150
+						},
+						{
+							field: 'solve',
+							width: 120,
+							title: '解决情况',
+							sort: true
+						},
+						{
+							field: 'answer',
+							width: 150,
+							title: '对反馈的回答',
+							sort: true
+						},
+						{
+							field: 'future',
+							width: 200,
+							title: '是否正在解决',
+							sort: true
+						}
+					]
+				]
+			});
+		});
+	</script>
+</html>
