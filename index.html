@@ -251,6 +251,12 @@
 								</dl>
 							</li>
 							<li class="layui-nav-item">
+								<a lay-jump="submitspages">需求墙</a>
+							</li>
+							<li class="layui-nav-item">
+								<a lay-jump="feedbackspages">反馈墙</a>
+							</li>
+							<li class="layui-nav-item">
 								<iframe allowtransparency="true" width="220" height="36" style="border: none;"
 									class="layui-hide-sm"
 									src="//tianqi.2345.com/plugin/widget/index.htm?s=3&z=3&t=0&v=0&d=1&bd=0&k=000000&f=0080ff&ltf=00ff00&htf=cc0000&q=1&e=1&a=1&c=59431&w=180&h=36&align=center"></iframe>
@@ -383,7 +389,7 @@
 							layer.full(index); // 最大化
 						},
 					});
-				},
+				}
 			});
 
 			// iframe页面改变
@@ -441,6 +447,18 @@
 				},
 				errpages: function() {
 					pages_href = "pages/err.html"
+					if (pages_href === tmp_pages_href) return
+					tmp_pages_href = pages_href
+					pages_show.setAttribute("src", pages_href);
+				},
+				submitspages: function() {
+					pages_href = "pages/submitspages.html"
+					if (pages_href === tmp_pages_href) return
+					tmp_pages_href = pages_href
+					pages_show.setAttribute("src", pages_href);
+				},
+				feedbackspages: function() {
+					pages_href = "pages/feedbackspages.html"
 					if (pages_href === tmp_pages_href) return
 					tmp_pages_href = pages_href
 					pages_show.setAttribute("src", pages_href);
