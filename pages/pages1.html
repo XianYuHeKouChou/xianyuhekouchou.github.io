@@ -55,12 +55,17 @@
 					</div>
 				</div>
 				<div class="layui-row layui-hide-sm">
-					<div class="layui-col-xs6">
+					<div class="layui-col-xs4">
+						<button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="downapp">
+							获取NCVTAPP
+						</button>
+					</div>
+					<div class="layui-col-xs4">
 						<button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="show_video">
 							查看二课演示
 						</button>
 					</div>
-					<div class="layui-col-xs6">
+					<div class="layui-col-xs4">
 						<button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="show_video2">
 							查看fif演示
 						</button>
@@ -92,14 +97,19 @@
 				},
 				show_video: function() {
 					util.openWin({
-						url: '../static/videos.mp4'
+						url: 'https://xianyuhekouchou.blob.core.windows.net/ceshi/videos.mp4'
 					})
 				},
 				show_video2: function() {
 					util.openWin({
-						url: '../static/videos1.mp4'
+						url: 'https://xianyuhekouchou.blob.core.windows.net/ceshi/videos1.mp4'
 					})
-				}
+				},
+				downapp: function() {
+					util.openWin({
+						url: 'https://xianyuhekouchou.blob.core.windows.net/ceshi/ncvt.apk'
+					})
+				},
 			})
 		});
 	</script>

@@ -61,23 +61,13 @@
 			var $ = layui.$;
 			util.on('lay-jump', {
 				download_app: function() {
-					let down_text = ["../app/ClashVerge1.7z.001", "../app/ClashVerge1.7z.002",
-						"../app/ClashVerge.exe"
-					]
-					let down_num = 0
-					let set_time = setInterval(() => {
-						util.openWin({
-							url: down_text[down_num]
-						})
-						if (down_num === 2) {
-							clearInterval(set_time)
-						}
-						down_num++
-					}, 1000)
+					util.openWin({
+						url: 'https://xianyuhekouchou.blob.core.windows.net/ceshi/ClashVerge.exe'
+					})
 				},
 				download_app2: function() {
 					util.openWin({
-						url: "../app/clash.apk"
+						url: "https://xianyuhekouchou.blob.core.windows.net/ceshi/clashandroid.apk"
 					})
 				},
 				jump_page: function() {
