@@ -307,6 +307,18 @@
 	align-items: center;
 }
 
+.layui-col-xs4 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.layui-col-xs2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .logo {
 	/* background-image: url(../static/ddd.jpg); */
 	background-repeat: no-repeat;
