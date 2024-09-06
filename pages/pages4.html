@@ -44,11 +44,14 @@
 						</button>
 					</div>
 				</div>
-				<p class="c-w layui-font-22 layui-margin-3">需配合订阅（机场）节点科学上网</p>
+				<p class="c-w layui-font-22 layui-margin-3">不方便多说</p>
 				<p class="c-g84 layui-font-18 layui-margin-3">目前仅支持安卓系统，iOS系统请使用 <a
 						href="https://apps.apple.com/tw/app/shadowrocket/id932747118" target="_blank">Shadowrocket</a>
 				</p>
-				<p class="c-g84 layui-font-18 layui-margin-3">下载时如遇文件下载不全请允许保留文件和允许弹出多窗口</p>
+				<p class="c-g84 layui-font-18 layui-margin-3">AppStore 共享ShadowrocketID（不保证可用性）：<a
+						href="https://ccbaohe.com/appleID/" target="_blank">共享ID1</a>
+					<a href="https://idshare001.me/goso.html" target="_blank">共享ID2</a>
+				</p>
 			</div>
 			<!-- logo区域 -->
 		</div>
@@ -81,27 +84,9 @@
 						content: '已经复制到剪切板，直接粘贴即可'
 					}, function(index) {
 						navigator.clipboard.writeText(
-							'https://dydz.csjc.win/api/v1/client/subscribe?token=f4336e19c305b2c48b615959b6b860bb'
+							'https://dd.csjc.win/api/v1/client/subscribe?token=f4336e19c305b2c48b615959b6b860bb'
 						)
 						layer.close(index);
-					});
-				},
-				get_pic: function() {
-					layer.photos({
-						photos: {
-							"title": "演示",
-							"start": 0,
-							"data": [{
-								"alt": "1",
-								"pid": 2,
-								"src": "../static/clash.png",
-							}, {
-								"alt": "1",
-								"pid": 2,
-								"src": "../static/clash1.png",
-							}]
-						},
-						footer: true
 					});
 				}
 			})
