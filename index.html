@@ -249,10 +249,10 @@
 								<a lay-jump="feedbackspages">反馈墙</a>
 							</li>
 							<li class="layui-nav-item layui-nav-itemed">
-								<a>个人广告</a>
+								<a>个人广告（10元）</a>
 								<dl class="layui-nav-child">
 									<dd><a lay-jump="item8">驾校报名</a></dd>
-									<dd><a lay-jump="errpages">校园卡办理</a></dd>
+									<dd><a lay-jump="item9">校园卡办理</a></dd>
 									<dd><a lay-jump="errpages">电动车入校</a></dd>
 								</dl>
 							</li>
@@ -441,6 +441,12 @@
 				},
 				item8: function() {
 					pages_href = "pages/pages6.html"
+					if (pages_href === tmp_pages_href) return
+					tmp_pages_href = pages_href
+					pages_show.setAttribute("src", pages_href);
+				},
+				item9: function() {
+					pages_href = "pages/pages7.html"
 					if (pages_href === tmp_pages_href) return
 					tmp_pages_href = pages_href
 					pages_show.setAttribute("src", pages_href);
