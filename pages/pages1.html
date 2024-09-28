@@ -38,19 +38,14 @@
 					</button>
 				</div>
 				<div class="layui-row layui-hide-sm">
-					<div class="layui-col-xs4">
+					<div class="layui-col-xs6">
 						<button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="downapp">
 							获取安卓APP
 						</button>
 					</div>
-					<div class="layui-col-xs4">
-						<button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="show_video">
-							查看二课演示
-						</button>
-					</div>
-					<div class="layui-col-xs4">
-						<button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="show_video2">
-							查看fif演示
+					<div class="layui-col-xs6">
+						<button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="show_video3">
+							查看APP演示
 						</button>
 					</div>
 				</div>
@@ -86,6 +81,11 @@
 				show_video2: function() {
 					util.openWin({
 						url: 'https://xianyuhekouchou.blob.core.windows.net/ceshi/videos1.mp4'
+					})
+				},
+				show_video3: function() {
+					util.openWin({
+						url: 'https://xianyuhekouchou.blob.core.windows.net/ceshi/videos2.mp4'
 					})
 				},
 				downapp: function() {
