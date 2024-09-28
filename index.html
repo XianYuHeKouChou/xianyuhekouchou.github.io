@@ -92,8 +92,8 @@
 	<body class="layui-layout-body">
 		<div class="start-bg trans">
 			<div class="bgc trans">
-				<img src="./static/123.jpg" alt="" class="layui-hide-xs" />
-				<img src="./static/456.jpg" alt="" class="layui-hide-sm" />
+				<img src="./static/123.png" alt="" class="layui-hide-xs" />
+				<img src="./static/456.png" alt="" class="layui-hide-sm" />
 			</div>
 			<div id="container">
 				<span id="text1"></span>
@@ -124,14 +124,14 @@
 				text2: document.getElementById("text2")
 			};
 			let texts = [
-				"对视的那一刻",
-				"我以为我们会有以后"
+				"庆祝祖国建国75周年",
+				"国庆快乐"
 			];
 			let mql = window.matchMedia('(max-width: 768px)');
 			if (mql.matches) {
 				texts = [
-					"摇一摇",
-					"王源请你抽芙蓉王"
+					"庆祝祖国建国75周年",
+					"国庆快乐"
 				]
 			}
 			const morphTime = 1;
@@ -264,7 +264,6 @@
 		</div>
 	</body>
 	<script>
-		
 		layui.use(["element", "layer", "util"], function() {
 			var element = layui.element;
 			var layer = layui.layer;
