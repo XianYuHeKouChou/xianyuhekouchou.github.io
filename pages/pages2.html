@@ -19,19 +19,7 @@
 			<div class="jc-c ai-c flex fd-y mt2">
 				<div class="logo"></div>
 				<h1 class="layui-font-gray layui-margin-3 layui-font-30">学习通签到助手</h1>
-				<div class="layui-row layui-hide-xs">
-					<div class="layui-col-xs6">
-						<button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="jump_page">
-							获取付费版
-						</button>
-					</div>
-					<div class="layui-col-xs6">
-						<button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="show_pic">
-							付费公众号
-						</button>
-					</div>
-				</div>
-				<div class="layui-row layui-hide-sm">
+				<div class="layui-row">
 					<div class="layui-col-xs4">
 						<button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="download_app">
 							付费版APP
@@ -50,6 +38,7 @@
 				</div>
 				<p class="c-w layui-font-22 layui-margin-3">早八起不来怎么办?</p>
 				<p class="c-g84 layui-font-18 layui-margin-3">目前只有二维码签到需要到现场，可以摇人绑定你的学习通账号帮签到</p>
+				<p class="c-g84 layui-font-18 layui-margin-3">（这个目前支持过滑动签到码）</p>
 			</div>
 		</div>
 	</body>
@@ -60,11 +49,6 @@
 			var util = layui.util;
 			var $ = layui.$;
 			util.on('lay-jump', {
-				jump_page: function() {
-					util.openWin({
-						url: 'https://api2.function.icu',
-					})
-				},
 				download_app: function() {
 					util.openWin({
 						url: 'https://xianyuhekouchou.blob.core.windows.net/ceshi/qiandao.apk'
@@ -87,25 +71,6 @@
 							}]
 						},
 						footer: false
-					});
-				},
-				show_pic2: function() {
-					layer.photos({
-						photos: {
-							"title": "QR_Code1",
-							"start": 0,
-							"data": [{
-								"alt": "微信公众号二维码",
-								"pid": 2,
-								"src": "../static/qiandao.jpg",
-							}]
-						},
-						footer: false
-					});
-				},
-				jump_page3: function() {
-					util.openWin({
-						url: 'https://mp.weixin.qq.com/s/Y8vH1Ir6kTflkQ5-MRRpUQ'
 					});
 				}
 			})
