@@ -8,9 +8,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<script>
 			if (window.location.href !== "https://www.xianyuhekouchou.me/") {
-			    if (confirm("您需要更换较快的节点访问此页面吗？")) {
-			        window.location.href = "https://www.xianyuhekouchou.me/";
-			    }
+				if (confirm("您需要更换较快的节点访问此页面吗？")) {
+					window.location.href = "https://www.xianyuhekouchou.me/";
+				}
 			}
 		</script>
 		<link href="css/layui.css" rel="stylesheet" />
@@ -242,12 +242,15 @@
 								</dl>
 							</li>
 							<li class="layui-nav-item">
-								<iframe allowtransparency="true" width="220" height="36" style="border: none;"
-									class="layui-hide-sm"
-									src="//tianqi.2345.com/plugin/widget/index.htm?s=3&z=3&t=0&v=0&d=1&bd=0&k=000000&f=0080ff&ltf=00ff00&htf=cc0000&q=1&e=1&a=1&c=59431&w=180&h=36&align=center"></iframe>
+								<a lay-jump="item_about">关于</a>
 							</li>
 							<li class="layui-nav-item">
 								<a lay-jump="item_test">测试页面</a>
+							</li>
+							<li class="layui-nav-item">
+								<iframe allowtransparency="true" width="220" height="36" style="border: none;"
+									class="layui-hide-sm"
+									src="//tianqi.2345.com/plugin/widget/index.htm?s=3&z=3&t=0&v=0&d=1&bd=0&k=000000&f=0080ff&ltf=00ff00&htf=cc0000&q=1&e=1&a=1&c=59431&w=180&h=36&align=center"></iframe>
 							</li>
 						</ul>
 					</div>
@@ -280,7 +283,8 @@
 
 			var pages_arr = ["https://scriptcat.org/zh-CN/", "https://docs.ocsjs.com", "pages/pages1.html",
 				"pages/pages2.html", "pages/pages3.html", "pages/pages4.html", "pages/pages5.html",
-				"pages/pages6.html", "pages/pages7.html", "pages/pages8.html", "pages/err.html"
+				"pages/pages6.html", "pages/pages7.html", "pages/pages8.html", "pages/aboutus.html",
+				"pages/err.html"
 			]
 
 			// iframe页面改变
@@ -327,8 +331,11 @@
 				item_test: function() {
 					window.open('https://www.xianyuhekouchou.me/test/test.html')
 				},
-				errpages: function() {
+				item_about: function() {
 					changePagehref(10)
+				},
+				errpages: function() {
+					changePagehref(11)
 				}
 			});
 		});
