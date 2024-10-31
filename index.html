@@ -43,6 +43,7 @@
 				#text1,
 				#text2 {
 					font-size: 30pt;
+					color: #00ff00;
 				}
 			}
 
@@ -92,7 +93,7 @@
 	<body class="layui-layout-body">
 		<div class="start-bg trans">
 			<div class="bgc trans">
-				<img src="./static/123.jpeg" alt="" class="layui-hide-xs" />
+				<img src="./static/123.jpg" alt="" class="layui-hide-xs" />
 				<img src="./static/456.jpg" alt="" class="layui-hide-sm" />
 			</div>
 			<div id="container">
@@ -110,6 +111,7 @@
 				</defs>
 			</svg>
 		</div>
+		<!-- 网页加载动画开始 -->
 		<script>
 			window.addEventListener("load", (event) => {
 				setTimeout(() => {
@@ -123,16 +125,10 @@
 				text1: document.getElementById("text1"),
 				text2: document.getElementById("text2")
 			};
-			let texts = [
-				"那天你拉着我的手",
-				"我以为这就是永远"
-			];
+			let texts = ["那天你拉着我的手", "我以为这就是永远"];
 			let mql = window.matchMedia('(max-width: 768px)');
 			if (mql.matches) {
-				texts = [
-					"摇一摇",
-					"王源请你抽芙蓉王"
-				]
+				texts = ["自己一个人？", "那还不赶紧的"]
 			}
 			const morphTime = 1;
 			const cooldownTime = 1;
@@ -190,6 +186,7 @@
 			}
 			animate();
 		</script>
+		<!-- 网页加载动画结束 -->
 		<div class="layui-layout layui-layout-admin">
 			<div id="LAY_app">
 				<div class="layui-header">
@@ -209,11 +206,6 @@
 								style="bottom: 0; border: none;position: relative;top: 12px" class="layui-hide-xs"
 								src="//tianqi.2345.com/plugin/widget/index.htm?s=3&z=3&t=0&v=0&d=1&bd=0&k=000000&f=0080ff&ltf=00ff00&htf=cc0000&q=1&e=1&a=1&c=59431&w=180&h=36&align=center"></iframe>
 						</li>
-						<li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
-							<a>
-								<i class="layui-icon layui-icon-more-vertical"></i>
-							</a>
-						</li>
 					</ul>
 				</div>
 				<div class="layui-side layui-side-menu" style="background-color: var(--lay-color-bg-2);">
@@ -223,10 +215,10 @@
 								<a lay-jump="item1">脚本猫</a>
 							</li>
 							<li class="layui-nav-item">
-								<a lay-jump="item2">NCVT Beta</a>
+								<a lay-jump="item2">网课助手</a>
 							</li>
 							<li class="layui-nav-item">
-								<a lay-jump="item3">网课助手</a>
+								<a lay-jump="item3">NCVT Beta</a>
 							</li>
 							<li class="layui-nav-item">
 								<a lay-jump="item4">签到助手</a>
@@ -273,126 +265,70 @@
 			var util = layui.util;
 			var $ = layui.$;
 
-			let text = `<div style="padding: 15px;" class="flex fd-y jc-c ai-c">
-					<p class="font-supermax font-bold">Contact-us</p>
-					<p class="font-max mt2"><span>Email:</span>
-						<a href="mailto:xianyuhekouchou@gmail.com" target="_blank">xianyuhekouchou@gmail.com</a>
-					</p>
-					<a href="https://t.me/xianyuhekouchou" target="_blank"><img src="static/tg.png" alt="" class="mt3" /></a>
-					<a href="mqqwpa://im/chat?chat_type=wpa&uin=466779060" target="_blank"><img src="static/QQ.jpg" alt="" class="mt3 w100 layui-hide-sm" /></a>
-     					<a href="tencent://message/?uin=466779060" target="_blank"><img src="static/QQ.jpg" alt="" class="mt3 w100 layui-hide-xs" /></a>
-				</div>`;
-
-			let iframe_page = `<iframe width="100%" height="100%" src="https://forms.office.com/r/rXKUgxyKwK?embed=true" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen
-					mozallowfullscreen msallowfullscreen></iframe>`;
-
-			let iframe_page1 =
-				`<iframe width="100%" height="100%" src="https://forms.office.com/Pages/ResponsePage.aspx?id=lcQ959jZuk6Zs0PuQy8hnh_VS-jiioJOmoVNSsyrp9pUNEIxNEZEQUdGWFNWSjQwMzZPVDhTT0FKWS4u&embed=true" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>`;
-
-			// 头部事件
-			util.event("lay-header-event", {
-				menuRight: function() {
-					// 右侧菜单事件
-					layer.open({
-						type: 1,
-						title: "更多",
-						content: text,
-						area: ["350px", "100%"],
-						offset: "rt", // 右上角
-						anim: "slideLeft", // 从右侧抽屉滑出
-						shadeClose: true,
-						scrollbar: false,
-					});
-				},
-			});
-
-			let sidemenuopen = 0
-			let mainapp = document.getElementById('LAY_app')
+			var sidemenuopen = false
+			var mainapp = document.getElementById('LAY_app')
 			util.on("lay-on", {
 				sidemeun: function() {
-					if (sidemenuopen === 0) {
+					if (sidemenuopen) {
 						mainapp.classList.add('layadmin-side-spread-sm')
-						sidemenuopen = 1
 					} else {
 						mainapp.classList.remove('layadmin-side-spread-sm')
-						sidemenuopen = 0
 					}
+					sidemenuopen = !sidemenuopen
 				},
 			});
+
+			var pages_arr = ["https://scriptcat.org/zh-CN/", "https://docs.ocsjs.com", "pages/pages1.html",
+				"pages/pages2.html", "pages/pages3.html", "pages/pages4.html", "pages/pages5.html",
+				"pages/pages6.html", "pages/pages7.html", "pages/pages8.html", "pages/err.html"
+			]
 
 			// iframe页面改变
 			var pages_show = document.getElementsByClassName("inner_page")[0];
 			var pages_href = null
 			var tmp_pages_href = "https://scriptcat.org/zh-CN/"
+
+			function changePagehref(opne_pageindex) {
+				if (pages_arr[opne_pageindex] == tmp_pages_href) return
+				tmp_pages_href = pages_arr[opne_pageindex]
+				pages_show.setAttribute("src", pages_arr[opne_pageindex]);
+			}
 			util.on("lay-jump", {
 				item1: function() {
-					pages_href = "https://scriptcat.org/zh-CN/"
-					if (pages_href === tmp_pages_href) return
-					tmp_pages_href = pages_href
-					pages_show.setAttribute("src", pages_href);
+					changePagehref(0)
 				},
 				item2: function() {
-					pages_href = "pages/pages1.html"
-					if (pages_href === tmp_pages_href) return
-					tmp_pages_href = pages_href
-					pages_show.setAttribute("src", pages_href);
+					changePagehref(1)
 				},
 				item3: function() {
-					pages_href = "https://docs.ocsjs.com"
-					if (pages_href === tmp_pages_href) return
-					tmp_pages_href = pages_href
-					pages_show.setAttribute("src", pages_href);
+					changePagehref(2)
 				},
 				item4: function() {
-					pages_href = "pages/pages2.html"
-					if (pages_href === tmp_pages_href) return
-					tmp_pages_href = pages_href
-					pages_show.setAttribute("src", pages_href);
+					changePagehref(3)
 				},
 				item5: function() {
-					pages_href = "pages/pages3.html"
-					if (pages_href === tmp_pages_href) return
-					tmp_pages_href = pages_href
-					pages_show.setAttribute("src", pages_href);
+					changePagehref(4)
 				},
 				item6: function() {
-					pages_href = "pages/pages4.html"
-					if (pages_href === tmp_pages_href) return
-					tmp_pages_href = pages_href
-					pages_show.setAttribute("src", pages_href);
+					changePagehref(5)
 				},
 				item7: function() {
-					pages_href = "pages/pages5.html"
-					if (pages_href === tmp_pages_href) return
-					tmp_pages_href = pages_href
-					pages_show.setAttribute("src", pages_href);
+					changePagehref(6)
 				},
 				item8: function() {
-					pages_href = "pages/pages6.html"
-					if (pages_href === tmp_pages_href) return
-					tmp_pages_href = pages_href
-					pages_show.setAttribute("src", pages_href);
+					changePagehref(7)
 				},
 				item9: function() {
-					pages_href = "pages/pages7.html"
-					if (pages_href === tmp_pages_href) return
-					tmp_pages_href = pages_href
-					pages_show.setAttribute("src", pages_href);
+					changePagehref(8)
 				},
 				item10: function() {
-					pages_href = "pages/pages8.html"
-					if (pages_href === tmp_pages_href) return
-					tmp_pages_href = pages_href
-					pages_show.setAttribute("src", pages_href);
+					changePagehref(9)
 				},
 				item_test: function() {
 					window.open('https://www.xianyuhekouchou.me/test/test.html')
 				},
 				errpages: function() {
-					pages_href = "pages/err.html"
-					if (pages_href === tmp_pages_href) return
-					tmp_pages_href = pages_href
-					pages_show.setAttribute("src", pages_href);
+					changePagehref(10)
 				}
 			});
 		});
