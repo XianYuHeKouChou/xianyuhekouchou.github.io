@@ -44,17 +44,17 @@
 						</button>
 					</div>
 					<div class="layui-col-xs6">
-						<button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="show_video3">
+						<button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="show_pvideo1">
 							查看NCVT演示
 						</button>
 					</div>
 					<div class="layui-col-xs6">
-						<button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="show_video3">
+						<button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="show_pvideo2">
 							查看FIF演示
 						</button>
 					</div>
 					<div class="layui-col-xs6">
-						<button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="show_video3">
+						<button type="button" class="layui-btn layui-btn-radius layui-margin-3" lay-jump="show_pvideo3">
 							查看XXT演示
 						</button>
 					</div>
@@ -96,9 +96,19 @@
 						url: 'https://xianyuhekouchou.blob.core.windows.net/ceshi/videos1.mp4'
 					})
 				},
-				show_video3: function() {
+				show_pvideo1: function() {
 					util.openWin({
-						url: 'https://xianyuhekouchou.blob.core.windows.net/ceshi/videos2.mp4'
+						url: 'https://xianyuhekouchou.blob.core.windows.net/ceshi/phone1.mp4'
+					})
+				},
+				show_pvideo2: function() {
+					util.openWin({
+						url: 'https://xianyuhekouchou.blob.core.windows.net/ceshi/phone2.mp4'
+					})
+				},
+				show_pvideo3: function() {
+					util.openWin({
+						url: 'https://xianyuhekouchou.blob.core.windows.net/ceshi/phone3.mp4'
 					})
 				},
 				downapp: function() {
